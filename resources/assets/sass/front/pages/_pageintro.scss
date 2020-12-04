@@ -1,0 +1,54 @@
+#courses-intro {
+	background-color: $green;
+	background-image: url('../img/page-intro/background-courses.png');
+	background-size: 50% auto;
+	background-position: right bottom;
+	@media(max-width: $max-md){
+		background-image: none;
+	}
+	.arrow {
+		path {
+			fill: $greenD !important;
+		}
+	}
+}
+
+#news-intro {
+	background-color: $beige;
+	background-image: url('../img/page-intro/background-news.svg');
+	@media(max-width: $max-md){
+		background-image: none;
+	}
+	.arrow {
+		path {
+			fill: $beigeD !important;
+		}
+	}
+}
+
+#aurea-intro {
+	background-color: $yellow;
+	background-image: url('../img/page-intro/background-aurea.svg');
+	@media(max-width: $max-md){
+		background-image: none;
+	}
+	.arrow {
+		path {
+			fill: $yellowD !important;
+		}
+	}
+}
+
+
+#faqs-intro {
+	background-color: $orange;
+	background-image: url('../img/page-intro/background-faqs.svg');
+	@media(max-width: $max-md){
+		background-image: none;
+	}
+	.arrow {
+		path {
+			fill: $orangeD !important;
+		}
+	}
+}

@@ -1,0 +1,25 @@
+
+// Base rules
+a {
+  &:hover {
+    text-decoration: none;
+  }
+  &:focus {
+    outline: none !important;
+  }
+}
+
+button {
+  &:focus {
+    outline: none !important;
+  }
+}
+
+textarea {
+  resize: vertical;
+  outline: none !important;
+}
+
+input {
+  outline: none !important;
+}

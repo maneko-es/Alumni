@@ -1,0 +1,114 @@
+#list-news {
+	color: white;
+	margin: 80px 0 160px;
+	@media(max-width: $max-sm){
+		margin: 40px 0 80px;
+	}
+	@media(max-width: $max-xs){
+		margin: 25px 0 40px;
+	}
+	.new-wrap {
+		padding: 0 10px;
+		margin-bottom: 20px;
+		.new {
+			background-color: $beige;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			a {
+				display: flex;
+				flex-direction: column;
+				height: 100%;
+			}
+			.thumb {
+				height: 345px;
+				@media(max-width: $max-xs){
+					height: 185px;
+				}
+			}
+			.content {
+				padding: 30px;
+				flex-grow: 1;
+				display: flex;
+				flex-direction: column;
+
+				@media(max-width: $max-sm){
+					padding: 15px;
+				}
+				.date {
+					display: block;
+					text-transform: uppercase;
+					font-weight: 700;
+					margin-bottom: 15px;
+					@media(max-width: $max-xs){
+						margin-bottom: 5px;
+					}
+				}
+				h3 {
+					color: white;
+					margin-bottom: 20px;
+					@media(max-width: $max-sm){
+						margin-bottom: 10px;
+					}
+				}
+				.description {
+					flex-grow: 1;
+				}
+				.category {
+					display: block;
+					font-weight: 700;
+					margin-top: 20px;
+				}
+			}
+		}
+	}
+	#filter {
+		margin-bottom: 40px;
+		font-size: 16px;
+		color: $gray;
+		.col-md-3 {
+			@media(max-width: $max-sm){
+				margin-bottom: 15px;
+			}
+		}
+		h4 {
+			font-size: 12px;
+			font-weight: $bold;
+			color: rgba(0,0,0,0.25);
+			text-transform: uppercase;
+		}
+		label, select, input {
+			width: 100%;
+		}
+		label {
+			font-weight: $bold;
+		}
+		.select-wrap {
+			height: 56px;
+			border: 2px solid $grayL;
+			width: 100%;
+			overflow: hidden;
+			background-image: url('../img/select.png');
+			background-repeat: no-repeat;
+			background-position: right 15px center;
+			padding-left: 20px;
+			select {
+				width: calc(100% + 30px);
+				height: 56px;
+				line-height: 56px;
+				border: 0;
+				background: transparent;
+				color: rgba(0,0,0,0.25);
+			}
+		}
+		input {
+			color: rgba(0,0,0,0.25);
+			height: 56px;
+			border: 2px solid $grayL;
+			width: 100%;
+			line-height: 56px;
+			padding: 5px 20px;
+			background-color: $grayL;
+		}
+	}
+}

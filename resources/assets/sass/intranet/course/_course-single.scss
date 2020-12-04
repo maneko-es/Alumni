@@ -1,0 +1,68 @@
+#course-header {
+	background-color: $red;
+	margin-bottom: 40px;
+	background-image: url('../img/intranet/lines_back.png');
+	background-size: cover;
+	background-position: center;
+	#header-content {
+		padding: 24px;
+		color: white;
+		display: flex;
+		height: 100%;
+		flex-direction: column;
+		position: relative;
+	}
+	h1 {
+		font-weight: $black;
+		margin-top: 0;
+		color: inherit;
+		flex-grow: 1;
+	}
+	.course-meta {
+		@extend .h2;
+		color: inherit;
+		font-weight: $bold;
+	}
+	.thumb {
+		min-height: 300px;
+	}
+	#course-open {
+		position: absolute;
+		bottom: 24px;
+		right: 0;
+		font-size: 50px;
+		cursor: pointer;
+		&:before {
+			content: '+';
+		}
+		&.open:before {
+			content: '—';
+		}
+	}
+	#couse-intro {
+		display: none;
+		background-color: white;
+		padding: 24px;
+		#intro-text {
+			font-size: 18px;
+			font-weight: $bold;
+			margin-top: 10px;
+		}
+	}
+}
+.intro-teacher {
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 10px;
+	.thumb {
+		height: 350px;
+		width: 260px;
+		margin-right: 24px;
+	}
+	.meta-base {
+		font-size: 16px;
+	}
+	h2 {
+		margin: 10px 0;
+	}
+}

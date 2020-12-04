@@ -1,0 +1,50 @@
+.module-card {
+	background-color: white;
+	padding: 24px;
+	height: 270px;
+	display: flex;
+	flex-direction: column;
+	&.completed {
+		border: 1px solid $red;
+	}
+	h2 {
+		margin-top: 15px;
+		flex-grow: 1;
+	}
+}
+
+// Module Page
+.course-module {
+	h1 {
+		padding-bottom: 15px;
+		border-bottom: 1px solid $grayL2;
+	}
+	.meta-wrap {
+		margin-bottom: 20px;
+	}
+	#content {
+		margin-top: 40px;
+	}
+}
+
+#module-intro {
+	margin-bottom: 40px;
+}
+
+#course-tabs {
+	h2 {
+		display: inline-block;
+		color: $grayM;
+		margin: 0 35px 30px 0;
+		cursor: pointer;
+		&.active {
+			color: $gray;
+		}
+	}
+	.items-list {
+		display: none;
+		&.active {
+			display: block;
+		}
+	}
+}

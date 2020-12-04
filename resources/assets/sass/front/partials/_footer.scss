@@ -1,0 +1,207 @@
+footer {
+	color: white;
+	font-size: 18px;
+	background-color: $grayL;
+	padding: 75px 0 120px;
+	@media(max-width: $max-sm){
+		padding-top: 40px;
+		padding-bottom: 40px;
+		font-size: 16px;
+	}
+	svg {
+		height: 46px;
+		width: auto;
+		@media(max-width: $max-sm){
+			height: 40px;
+		}
+	}
+	.container-fluid {
+		padding-left: 125px;
+		padding-right: 125px;
+		@media(max-width: $max-md){
+			padding-left: 60px;
+			padding-right: 60px;
+		}
+		@media(max-width: $max-sm){
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+		@media(max-width: $max-xs){
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+	#footer-menus-wrap {
+		margin-top: 50px;
+		@media(max-width: $max-sm){
+			margin-top: 40px;
+		}
+	}
+	#nav-footer {
+		@media(max-width: $max-sm){
+			font-weight: $bold;
+			margin-bottom: 40px;
+		}
+		a {
+			margin-right: 40px;
+			@media(max-width: $max-sm){
+				margin-right: 20px;
+				padding-right: 20px;
+				border-right: 1px solid white;
+				&:last-child {
+					margin-right: 0px;
+					padding-right: 0px;
+					border-right: none !important;
+				}
+			}
+			@media(max-width: $max-xs){
+				font-weight: 400;
+				margin-right: 10px;
+				padding-right: 10px;
+			}
+		}
+	}
+	#legal-menu {
+		margin-top: 65px;
+		padding-top: 30px;
+		border-top: 1px solid white;
+		font-size: 14px;
+		@media(max-width: $max-sm){
+			margin-top: 40px;
+		}
+		a {
+			margin-right: 20px;
+			padding-right: 20px;
+			border-right: 1px solid white;
+			@media(max-width: $max-xs){
+				display: block;
+				padding-right: 0;
+				margin-right: 0;
+				border: 0;
+				margin-bottom: 7px;
+			}
+		}
+	}
+}
+.home footer, .legal footer {
+	color: rgba(0,0,0,0.5);
+	margin-top: 160px;
+	@media(max-width: $max-xs){
+		margin-top: 60px;
+	}
+	#legal-menu {
+		border-top: 1px solid rgba(0,0,0,0.3);
+		a {
+			border-right: 1px solid rgba(0,0,0,0.3); 
+			@media(max-width: $max-xs){
+				border: 0;
+			}
+		}
+	}
+	#nav-footer {
+		a {
+			@media(max-width: $max-sm){
+				border-right: 1px solid $gray;
+			}
+		}
+	}
+}
+
+
+#social {
+	text-align: right;
+	a {
+		display: inline-block;
+		margin-right: 15px;
+		svg,img {
+			margin-right: 3px;
+			height: 20px;
+			width: auto;
+			vertical-align: sub;
+			path {
+				fill: inherit !important;
+			}
+		}
+	}
+}
+
+#mc_embed_signup {
+	background-color: transparent !important;
+	margin-bottom: 40px;
+	max-width: 375px;
+	width: 100%;
+	margin-left: auto;
+	h2 {
+		color: rgba(0,0,0,0.5);
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 1.1em;
+		margin-bottom: 15px;
+	}
+	.mc-field-group {
+		overflow: auto;
+	}
+	input[type="email"],input[type="submit"]{
+		border: 2px solid rgba(0,0,0,0.2);
+		background-color: transparent;
+		float: left;
+		font-size: 16px;
+		height: 50px;
+		line-height: 50px;
+		color: rgba(0,0,0,0.5);
+	}
+	input[type="email"]{
+		width: calc(100% - 150px);
+		font-size: 18px;
+		font-weight: 400;
+	}
+	input[type="submit"]{
+		width: 150px;
+		border-left: 0;
+		&:hover {
+			color: inherit;
+			background-color: rgba(255,255,255,0.5);
+		}
+	}
+
+}
+
+.courses footer, .course-single footer, .aurea footer, .news footer, .faqs footer, .checkout footer {
+	svg {path, polygon {fill: white !important; } }
+	#mc_embed_signup {
+		h2 { color: white }
+		input[type="email"],input[type="submit"],input[type="email"]::-webkit-input-placeholder { border-color: rgba(255,255,255,0.5); color: white; }
+	}
+}
+.courses, .course-single {
+	footer { background-color: $greenD; }
+	::selection {background-color: $greenD; }
+	::-moz-selection {background-color: $greenD; }
+}
+.aurea {
+	footer { background-color: $yellowD; }
+	::selection {background-color: $yellowD; }
+	::-moz-selection {background-color: $yellowD; }
+}
+.news {
+	footer  { background-color: $beigeD; }
+	::selection {background-color: $beigeD; }
+	::-moz-selection {background-color: $beigeD; }
+}
+.faqs {
+	footer  { background-color: $orangeD; }
+	::selection {background-color: $orangeD; }
+	::-moz-selection {background-color: $orangeD; }
+}
+.checkout {
+	footer  { background-color: #979797; }
+	::selection {background-color: #979797; }
+	::-moz-selection {background-color: #979797; }
+}
+
+#alertModal {
+	.modal-content {
+		padding: 80px 45px;
+		text-align: center;
+	}
+}

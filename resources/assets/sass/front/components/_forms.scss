@@ -1,0 +1,49 @@
+form {
+	input[type="text"],input[type="email"],input[type="tel"],select{
+		border: 2px solid $grayL;
+		border-radius: 0;
+		height: 56px;
+		line-height: 56px;
+		padding: 15px 25px;
+		width: 100%;
+		margin-bottom: 15px;
+		font-size: 16px;
+		@media(max-width: $max-sm){
+			height: 40px;
+			line-height: 40px;
+			padding: 10px;
+			margin-bottom: 10px;
+		}
+	}
+	label {
+		display: block;
+	}
+	.with-error {
+		input[type="text"],input[type="email"],input[type="tel"],select {
+			border: 2px solid $red;
+		}
+	}
+	.fake-checkbox {
+		display: inline-block;
+		width: 17px;
+		height: 17px;
+		border: 1px solid $red;
+		margin-right: 10px;
+	}
+	input[type="checkbox"]{
+		visibility: hidden;
+		width: 0 !important;
+		&:checked + span {
+			background-color: $red;
+		}
+	}
+	select {
+		line-height: 26px;
+		background-image: url('../img/arrow-select.png');
+		background-repeat: no-repeat;
+		background-position: center right 20px;
+		option[disabled]{
+			color: #979797;
+		}
+	}
+}

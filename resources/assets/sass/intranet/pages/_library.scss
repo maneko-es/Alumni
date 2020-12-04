@@ -1,0 +1,91 @@
+/* LIBRARY CH */
+.library {
+	/*
+	form{width: 100%;}
+	article .footer{ position: absolute; bottom: 0px; width: 100%; padding-bottom:25px; }
+	.col-md-6.course{ font-weight: bold;}
+	.col-md-6.download{ font-weight: bold; color: #ccc; text-align: right; text-overflow: ellipsis; overflow: hidden;}
+	article 
+	
+	
+	input.filter_form{background-color: #ccc; text-transform: uppercase;}
+	input.filter_form::placeholder{ font-weight: bold; color: #453D3D;}
+ */
+
+	#library_filter_box {
+		margin-bottom: 50px;
+		.filter_by{
+			text-transform: uppercase; 
+			font-weight: bold;
+			margin-bottom: 20px;
+		}
+		.bootstrap-select {
+			width: 100%;
+		}
+		select, .btn.dropdown-toggle {
+			width: 100%;
+			background-color: white;
+			height: 60px;
+			border: 0;
+			line-height: 60px;
+			text-transform: uppercase;
+			padding: 0 20px;
+			color: rgba(69,61,61,0.2);
+			font-weight: 700;
+			font-size: 14px;
+			border-radius: 0;
+		}
+		.btn.dropdown-toggle:not(.bs-placeholder) {
+			color: rgba(69,61,61,1);
+		}
+		.dropdown-item.active, .dropdown-item:active {
+			background-color: $red;
+		}
+		#text_search {
+			background-color: #d8d8d8;
+			text-transform: uppercase;
+			color: rgba(69,61,61,1);
+			font-weight: 700;
+			font-size: 14px;
+		}
+	}
+	#library_results_box {
+		article {
+			background-color: #fff; 
+			margin-bottom: 20px; 
+			padding: 25px 15px;
+			display: flex;
+			flex-direction: column;
+			min-height: 280px;
+			height: 100%;
+			h2 {
+				font-size: 30px;
+				line-height: 40px;
+				margin-bottom: 30px;
+			}
+			.category { 
+				color: $red; 
+				font-weight: bold;
+				font-size: 16px;
+				flex-grow: 1;
+			}
+			.course {
+				font-weight: 700;
+				font-size: 14px;
+			}
+			.download {
+				color: #D8D8D8;
+				font-weight: 700;
+				font-size: 14px;
+				text-align: right;
+				i {
+					margin-right: 10px;
+				}
+			}
+		}
+	}
+}
+
+*::focus, *::active {
+	outline: 0 !important;
+}

@@ -1,0 +1,169 @@
+// Uploader
+#modal-upload {
+  .modal-dialog {
+    width: auto;
+    height: calc(100vh - 60px);
+    margin: 15px;
+    @media (min-width: $screen-sm-min) {
+      margin: 30px;
+    }
+  }
+  .modal-content {
+    height: 100%;
+  }
+  .modal-header {
+    border: none;
+  }
+  .modal-body {
+    position: absolute;
+    top: 55px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding: 15px 0;
+  }
+  .modal-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  .tab-content {
+    position: absolute;
+    top: 57px;
+    right: 0;
+    bottom: 65px;
+    left: 0;
+    margin: 0;
+  }
+  .tab-pane {
+    height: 100%;
+    overflow-y: auto;
+  }
+  .nav {
+    li {
+      &:first-of-type {
+        a {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+  [data-uploader] {
+    height: 100%;
+    &.dz-drag-hover {
+      border: 5px solid $grey;
+    }
+    .content {
+      display: table;
+      width: 100%;
+      height: 100%;
+      > div {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+      }
+      i {
+        margin-bottom: 10px;
+      }
+      .dz-message {
+        border: 1px solid $table-border-color;
+        padding: 10px 15px;
+        cursor: pointer;
+        display: inline-block;
+        &:hover {
+          background-color: $grey;
+        }
+      }
+    }
+    .progress {
+      display: none;
+      margin: 30px 30px 0;
+    }
+    .error-message {
+      margin: 30px 30px 0;
+      color: $red;
+    }
+  }
+  .medias {
+    margin: 5px 0 40px;
+    > div {
+      margin-top: 15px;
+    }
+  }
+  .media {
+    > div {
+      border: 1px solid $table-border-color;
+    }
+    &.selected {
+      > div{
+        border: 3px solid $brand-primary;
+      }
+    }
+  }
+  .media-thumbnail, .media-icon {
+    width: 100%;
+    height: 100px;
+    cursor: pointer;
+    line-height: 100px;
+    @media (min-width: $screen-lg-min) {
+      height: 120px;
+    }
+  }
+}
+
+// Medias
+.form-medias {
+  .media-container {
+    position: relative;
+    margin-top: 10px;
+    &:hover {
+      button {
+        display: block;
+      }
+    }
+  }
+  button {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    cursor: pointer;
+  }
+  .media-thumbnail, .media-icon {
+    width: 100%;
+    height: 100px;
+    border: 1px solid $table-border-color;
+    @media (min-width: $screen-lg-min) {
+      height: 120px;
+    }
+    @media (min-width: 1500px) {
+      height: 160px;
+    }
+  }
+}
+
+.media-icon {
+  display: inline-block;
+  vertical-align: top;
+  width: 70px;
+  height: 70px;
+  border: 1px solid #ddd;
+  text-align: center;
+  margin-right: 10px;
+  line-height: 70px;
+}
+
+.media-thumbnail {
+  display: inline-block;
+  vertical-align: top;
+  width: 70px;
+  height: 70px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-right: 10px;
+  background-color: $table-border-color;
+}

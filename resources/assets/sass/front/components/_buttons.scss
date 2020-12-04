@@ -1,0 +1,30 @@
+.button {
+	display: block;
+	height: 60px;
+	line-height: 60px;
+	background-color: $red;
+	color: white;
+	border: 2px solid $red;
+	text-align: center;
+	font-weight: $bold;
+	font-size: 18px;
+	cursor: pointer;
+	padding-right: 20px;
+	padding-left: 20px;
+	&.button-line, &:hover {
+		background-color: white;
+		border: 2px solid $red;
+		color: $red;
+	}
+	&.button-line:hover {
+		background-color: $red;
+		//border: 2px solid white;
+		color: white;
+	}
+	&.multiline {
+		padding: 20px;
+		line-height: 20px;
+		height: auto;
+		white-space: normal;
+	}
+}

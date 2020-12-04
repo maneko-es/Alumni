@@ -1,0 +1,120 @@
+.checkout main {
+	margin-top: 150px;
+	margin-bottom: 150px;
+}
+.back {
+	font-size: 18px;
+	font-weight: 700;
+	color: rgba(69,61,61,0.4);
+	img {
+		vertical-align: unset;
+	}
+	+ .already-customer {
+		float: right;
+		@media(max-width: $max-xs){
+			float: none;
+			margin-top: 5px;
+		}
+	}
+}
+#checkout-wrap {
+	padding: 40px 70px;
+	background-color: white;
+	margin-top: 15px;
+	@media(max-width: $max-sm){
+		padding: 40px 30px;
+	}
+	@media(max-width: $max-xs){
+		padding: 40px 20px;
+	}
+}
+
+#course-dates.in-checkout {
+	h2, h3 {
+		text-align: left;
+	}
+}
+
+.checkout-second {
+	h2 {
+		margin-bottom: 45px;
+	}
+	label {
+		font-size: 16px;
+		font-weight: 700;
+		margin-bottom: 10px;
+	}
+	input, select {
+		width: 100%;
+		max-width: 470px;
+	}
+	#course-dates {
+		margin-top: 70px;
+	}
+
+}
+
+#order-total {
+	padding: 40px;
+	background-color: white;
+	margin-top: 15px;
+	font-size: 16px;
+	max-width: 575px;
+	font-weight: 700;
+	#resume-table {
+		width: 100%;
+		margin-bottom: 15px;
+		td {
+			color: #d8d8d8;
+			padding: 10px 0;
+			border-bottom: 1px solid #d8d8d8;
+			font-weight: 700;
+			&:last-child {
+				text-align: right;
+			}
+		}
+		tr:last-child {
+			td{
+				color: #453d3d;
+				border-bottom: 0;
+			}
+		}
+	}
+	input[type="submit"]{
+		display: inline-block;
+		-webkit-appearance: none;
+		padding: 0;
+		border: 0;
+		background-color: transparent;
+		color: $red;
+		font-weight: 700;
+	}
+	.order-table {
+		width: 100%;
+		margin-bottom: 20px;
+		td {
+			&:last-child {
+				text-align: right;
+			}
+		}
+	}
+	.button {
+		margin-top: 40px;
+		width: 100%;
+	}
+}
+
+#payment-success-wrap {
+	padding: 100px;
+	margin-top: 150px;
+	margin-bottom: 150px;
+	background-color: white;
+	text-align: center;
+	h2 {
+		margin-bottom: 40px;
+	}
+	.button {
+		width: 250px;
+		margin: 20px auto 0;
+	}
+}

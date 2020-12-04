@@ -1,0 +1,42 @@
+
+// Npm
+@import "node_modules/datatables-bootstrap3-plugin/media/css/datatables-bootstrap3.min";
+@import "node_modules/datatables.net-buttons-bs/css/buttons.bootstrap";
+@import "node_modules/datatables.net-responsive-dt/css/responsive.dataTables";
+@import "node_modules/datatables-rowreorder/css/rowReorder.bootstrap";
+
+// Rules
+.dataTable {
+  .actions {
+    a {
+      margin-left: 5px;
+      text-transform: uppercase;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+    a.untranslated {
+      color: white;
+      background-color: $red;
+      &:hover {
+        background-color: darken($red, 5%);
+      }
+    }
+  }
+}
+
+.dt-buttons {
+  float: none;
+  display: block;
+  overflow: auto;
+  margin: 25px 0;
+}
+
+.dataTables_length {
+  float: left;
+  clear: left;
+}
+
+.dataTables_filter {
+  float: right;
+}

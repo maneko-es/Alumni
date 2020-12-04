@@ -1,0 +1,57 @@
+#main-profile {
+	padding: 24px;
+	background-color: white;
+	h1 {
+		margin: 0;
+		font-weight: $black;
+	}
+	#profile-header {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		border-bottom: 1px solid $grayL;
+		padding-bottom: 25px;
+		margin-bottom: 30px;
+		.thumb {
+			width: 80px;
+			height: 80px;
+			border-radius: 50%;
+			margin-right: 30px;
+		}
+		h1 {
+			flex-grow: 1;
+		}
+	}
+	#profile-content {
+		h4 {
+			margin-top: 30px;
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+	}
+}
+
+form.user-form {
+	padding: 24px;
+	background-color: white;
+	input {
+		border: 1px solid $grayM;
+		height: 55px;
+		line-height: 55px;
+		padding: 0 15px;
+		width: 275px;
+	}
+	textarea {
+		resize: none;
+		border: 1px solid $grayM;
+		padding: 15px;
+		max-width: 100%;
+		width: 500px;
+	}
+	label {
+		font-weight: $bold;
+		margin: 20px 0 10px;
+	}
+}

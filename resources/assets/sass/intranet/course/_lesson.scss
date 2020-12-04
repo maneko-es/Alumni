@@ -1,0 +1,106 @@
+#lesson-footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: bottom;
+	align-items: center;
+}
+ .inputfile {
+     visibility: visible;
+	/*width: 0.1px;
+    height: 0.1px;
+    */
+	opacity: 0;
+	/*overflow: hidden;*/
+	position: absolute;
+    z-index: 3;
+    height: 70px;
+}
+.inputfile + label {
+    font-weight: 700;
+    background-color: #ccc;
+    display: inline-block;
+    width: 100%;
+    padding: 20px 20px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover ,
+.inputfile:hover + label{
+    background-color: #FE4A68;
+    color:#fff;
+}
+.inputfile + label, .inputfile {
+	cursor: pointer; /* "hand" cursor */
+}
+.inputfile:focus + label {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+.inputfile + label * {
+	pointer-events: none;
+}
+
+#lesson-intro, .block-highlight {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: rgba(254,74,104,0.2);
+    margin-top: 50px;
+    p {
+        margin: 0;
+    }
+}
+
+
+#lesson-content {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 40px;
+    .lesson-block {
+        margin-bottom: 40px;
+        &.block-text {
+            h2 {
+                font-weight: 700;
+                margin-bottom: 30px;
+            }
+        } 
+        &.block-image:not(.original-size) {
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+        &.block-image {
+            img {
+                max-width: 100%;
+            }
+        }
+        &.block-gallery {
+            img {
+                width: 100%;
+                height: auto;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+
+#lesson-form{margin: 50px 0px 0px 0px;}
+#lesson-form h3{margin: 10px 0px;}
+#text_warning{
+    margin:50px 0px;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+.btn-secondary{ background-color: #ccc;}
+.error{margin: 50px 0px;}
+.error span{padding: 20px;background-color: #FE4A68; font-weight: bold; color:#fff }
+.error ul{ list-style: none; padding: inherit;}
+.error li{margin: inherit;
+line-height: 50px;
+    text-overflow: ellipsis;}
+

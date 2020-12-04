@@ -1,0 +1,19 @@
+[id$="slider"] {
+	transition: opacity 0.4s;
+	&:not(.slick-initialized){
+		height: 50px;
+		overflow: hidden;
+		opacity: 0;
+	}
+}
+.overflow-slider {
+	.slick-list {
+		overflow: visible;
+		.slick-slide {
+			transition: opacity 0.3s;
+			&:not(.slick-active){
+				opacity: 0.5;
+			}
+		}
+	}
+}

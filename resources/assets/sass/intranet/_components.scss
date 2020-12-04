@@ -1,0 +1,12 @@
+.button {
+	font-size: 14px;
+	line-height: 64px;
+	min-width: 280px;
+	text-transform: uppercase;
+	display: inline-block;
+	padding: 0 15px;
+	&.gray {
+		background-color: #d8d8d8;
+		border-color: #d8d8d8;
+	}
+}

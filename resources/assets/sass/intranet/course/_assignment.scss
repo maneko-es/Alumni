@@ -1,0 +1,110 @@
+.assignment_content {
+	margin-top: 40px;
+	padding-bottom: 40px;
+	border-bottom: 1px solid #979797;
+	.student_name {
+		margin-bottom: 15px;
+	}
+	.assignment-file {
+		color: $red;
+		text-decoration: underline;
+	}
+	&.assignment_content_teacher {
+		padding-left: 40px;
+	}
+	.assignment-files {
+		margin-bottom: 20px;
+	}
+}
+.button.send_feedback {
+	margin-top: 40px;
+}
+
+
+
+
+.course-assignment {
+	#input_files_wrap {
+        margin-bottom: 20px;
+        input[data-duplicated]{
+			color: $red;
+		}    
+    }
+    #input_files_wrap input[type="file"]{ 
+        display: block;
+        background: #FE4A68;
+        padding: 13px;
+        color: white;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    #input_files_names {
+		display: none;
+		margin-bottom: 40px;
+		span {
+			color: $red;
+			&:before {
+				content: '-';
+				margin-right: 10px;
+			}
+		}
+	}
+    #files-info {
+        display: block;
+        margin-bottom: 15px;
+    }
+}
+
+.edited_on {
+	font-style: italic;
+	font-size: 0.8em;
+	color: #C3C3C3;
+	font-weight: 400;
+	margin-top: 10px;
+}
+.edit-assignment-text, .reply-assignment-text, .edit-reply-assignment-text {
+	display: none;
+	border: 1px solid #d8d8d8;
+	padding: 40px;
+	.edit-form-buttons {
+		margin-top: 20px;
+		.button {
+			line-height: 40px;
+			height: 40px;
+		}
+	}
+	#input_files_wrap {
+		margin-bottom: 10px;
+		+ small {
+			display: block;
+			margin-top: -10px;
+			margin-bottom: 40px;
+		}
+	}
+}
+.course-assignment {
+	.reply_button,.seen_button {
+		display: inline-block;
+	}
+	.seen_button {
+		margin-left: 40px;
+		input {
+			background: transparent;
+			font-weight: bold;
+			color: $red;
+			cursor: pointer;
+		}
+	}
+}
+
+#assignment-finished {
+	margin-top: 40px;
+}
+.finished-subtitle {
+	font-size: 0.6em;
+	color: $red;
+	margin-bottom: 30px;
+	text-transform: uppercase;
+	font-style: 18px;
+	margin-left: 10px;
+}

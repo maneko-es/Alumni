@@ -1,0 +1,125 @@
+.news-single {
+	.thumb {
+		height: 500px;
+		max-height: 60vH;
+		margin-bottom: 50px;
+		@media(max-width: $max-sm){
+			height: 290px;
+		}
+	}
+	h1 {
+		font-size: 70px;
+		line-height: 1em;
+		text-align: center;
+		@media(max-width: $max-sm){
+			font-size: 45px;
+		}
+	}
+	#meta {
+		margin: 30px 0;
+		text-align: center;
+		div {
+			display: inline-block;
+			font-size: 16px;
+			font-weight: $bold;
+			margin: 0 20px;
+			img {
+				vertical-align: bottom;
+				margin-right: 10px;
+			}
+		}
+	}
+	p {
+		margin-bottom: 30px;
+	}
+	#intro-post {
+		color: $beigeD;
+		font-size: 30px;
+		line-height: 1.2em;
+		font-weight: $black;
+		margin: 40px 0;
+		@media(max-width: $max-sm){
+			margin: 30px 0;
+		}
+	}
+	.block-image {
+		margin: 30px 0;
+		img {
+			width: 100%;
+		}
+	}
+	.block-highlight {
+		h3 {
+			font-size: 45px;
+			line-height: 1.15em;
+			font-weight: $black;
+			margin: 30px 0;
+			@media(max-width: $max-sm){
+				font-size: 30px;
+				margin: 15px 0;
+			}
+		}
+	}
+	.block-gallery {
+		overflow: auto;
+		margin: 30px 0;
+		@media(max-width: $max-sm){
+			.thumb {
+				margin: 10px 0;
+			}
+		}
+		div {
+			height: 500px;
+			width: calc(50% - 10px);
+			float: left;
+			@media(max-width: $max-sm){
+				height: 330px;
+				width: 80%;
+			}
+			&:first-child {
+				margin-right: 10px;
+			}
+			&:last-child {
+				margin-left: 10px;
+				@media(max-width: $max-sm){
+					float: right;
+				}
+			}
+		}
+	}
+
+	#keep-reading {
+		margin-top: 100px;
+		background-color: $beige;
+		padding: 50px 0 100px;
+		color: $beigeD;
+		font-size: 20px;
+		@media(max-width: $max-sm){
+			margin-top: 80px;
+			padding: 10px 0 50px;
+		}
+		h2 {
+			color: white;
+			text-align: center;
+			margin-bottom: 70px;
+			@media(max-width: $max-sm){
+				margin-bottom: 30px;
+			}
+		}
+		.thumb {
+			height: 300px;
+			margin-bottom: 20px;
+		}
+		.date {
+			display: block;
+			font-size: 16px;
+			font-weight: $bold;
+			margin-bottom: 10px;
+			text-transform: uppercase;
+		}
+		h4 {
+			font-weight: $black;
+			margin-bottom: 10px;
+		}
+	}
+}

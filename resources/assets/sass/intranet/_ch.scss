@@ -1,0 +1,71 @@
+/* LESSON */
+.users-lesson .profile_user{ width: 32px; height: 32px;border-radius: 50px}
+.disabled_student{display: block; position: absolute; width: 100%; height: 100%; background-color: rgba(175,175,175,0.35); left: 0px; top: 0px;}
+a .disabled_student{pointer-events: none;
+        cursor:default !important;}
+.student_item{width:100%}
+.student_name{font-weight: bold;}
+.student_lesson{color: #ccc;}
+.student_reply{color:#FE4A68;}
+.delete_button, .edit_button,.reply_button,.seen_button{color:#FE4A68; font-weight: bold; cursor:pointer;}
+
+.student_lesson, .student_buttons{text-align: right;}
+.response_editable h3{ margin-bottom: 30px;}
+.response_editable{margin-bottom: 30px;}
+.responsed{ border:solid 1px #FE4A68;}
+
+/* ASSIGNMENT */
+ .inputfile {
+     visibility: visible;
+	/*width: 0.1px;
+    height: 0.1px;
+    */
+	opacity: 0;
+	/*overflow: hidden;*/
+	position: absolute;
+    z-index: 3;
+    height: 70px;
+}
+.inputfile + label {
+    font-weight: 700;
+    background-color: #ccc;
+    display: inline-block;
+    width: 100%;
+    padding: 20px 20px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover ,
+.inputfile:hover + label{
+    background-color: #FE4A68;
+    color:#fff;
+}
+.inputfile + label, .inputfile {
+	cursor: pointer; /* "hand" cursor */
+}
+.inputfile:focus + label {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+.inputfile + label * {
+	pointer-events: none;
+}
+
+#lesson-intro{margin-bottom: 25px;}
+#lesson-form{margin: 50px 0px 0px 0px;}
+#lesson-form h3{margin: 10px 0px;}
+#text_warning{
+    margin:50px 0px;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+.btn-secondary{ background-color: #ccc;}
+.error{margin: 50px 0px;}
+.error span{padding: 20px;background-color: #FE4A68; font-weight: bold; color:#fff }
+.error ul{ list-style: none; padding: inherit;}
+.error li{margin: inherit;
+line-height: 50px;
+    text-overflow: ellipsis;}

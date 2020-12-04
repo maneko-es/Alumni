@@ -1,0 +1,51 @@
+{
+  "name": "bootstrap-chosen",
+  "version": "1.4.2",
+  "description": "An alternate stylesheet for Chosen that integrates with Bootstrap. ",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alxlit/bootstrap-chosen.git"
+  },
+  "homepage": "https://github.com/alxlit/bootstrap-chosen",
+  "keywords": [
+    "bootstrap",
+    "chosen",
+    "bootstrap-chosen"
+  ],
+  "bugs": {
+    "url": "https://github.com/alxlit/bootstrap-chosen/issues"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "alxlit"
+  },
+  "gitHead": "2650dccb6c5cfb873a719837c58c972a6e11ec72",
+  "_id": "bootstrap-chosen@1.4.2",
+  "_shasum": "d7a184b21ecd952d586982339c60128f8827334d",
+  "_from": "bootstrap-chosen@latest",
+  "_npmVersion": "2.15.0",
+  "_nodeVersion": "4.4.2",
+  "_npmUser": {
+    "name": "bholyoak",
+    "email": "bholyoak@gmail.com"
+  },
+  "dist": {
+    "shasum": "d7a184b21ecd952d586982339c60128f8827334d",
+    "tarball": "https://registry.npmjs.org/bootstrap-chosen/-/bootstrap-chosen-1.4.2.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "bholyoak",
+      "email": "bholyoak@gmail.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/bootstrap-chosen-1.4.2.tgz_1459967813110_0.39180988073349"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/bootstrap-chosen/-/bootstrap-chosen-1.4.2.tgz",
+  "readme": "ERROR: No README data found!"
+}

@@ -1,0 +1,37 @@
+.secretary.help, .secretary.contact {
+	h1 {
+		font-weight: 900;
+		margin-bottom: 30px;
+		padding-bottom: 30px;
+		border-bottom: 1px solid #d8d8d8;
+	}
+	h3 {
+		font-size: 18px;
+		font-weight: 700;
+		line-height: 26px;
+		color: #453d3d;
+		margin-bottom: 5px;
+	}
+	.block {
+		margin-bottom: 30px;
+		padding-bottom: 30px;
+		border-bottom: 1px solid #d8d8d8;
+		&:last-child {
+			border: 0;
+		}
+	}
+}
+.secretary.contact {
+	.block {
+		a {
+			display: block;
+			text-decoration: none;
+			font-size: 45px;
+			font-weight: 900;
+			margin-top: 50px;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}

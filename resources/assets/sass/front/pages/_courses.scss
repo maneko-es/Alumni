@@ -1,0 +1,50 @@
+#courses {
+	background-color: $grayL;
+	padding-top: 160px;
+	padding-bottom: 160px;
+	@media(max-width: $max-md){
+		padding-top: 80px;
+		padding-bottom: 60px;
+	}
+	@media(max-width: $max-sm){
+		padding-top: 60px;
+		padding-bottom: 40px;
+	}
+	@media(max-width: $max-xs){
+		padding-top: 25px;
+		padding-bottom: 5px;
+	}
+	.course {
+		background-color: white;
+		margin-bottom: 40px;
+		height: auto;
+	}
+	.thumb {
+ 		height: 270px;
+ 		padding-bottom: 70%;
+	}
+	h2 {
+		text-align: center;
+	} 
+}
+
+#courses-testimonials {
+	background-image: url('../img/courses/background-big.png');
+	background-size: 100% auto;
+	background-position: top;
+	background-repeat: no-repeat;
+	padding-top: 160px;
+	padding-bottom: 160px;
+	margin: 0;
+	@media(max-width: $max-md){
+		padding-top: 80px;
+		padding-bottom: 60px;
+	}
+	@media(max-width: $max-sm){
+		padding-top: 60px;
+		padding-bottom: 40px;
+	}
+	.testimonial {
+		background-color: white;
+	}
+}

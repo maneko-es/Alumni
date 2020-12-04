@@ -1,0 +1,1 @@
+<div class="media-thumbnail" style="background-image:url('{{ url($filepath) }}')"></div>

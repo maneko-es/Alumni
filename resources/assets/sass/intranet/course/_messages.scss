@@ -1,0 +1,144 @@
+.chat {
+	h1 {
+		font-weight: 900;
+		margin-bottom: 40px;
+	}
+	aside {
+		background-color: white;
+		padding: 30px 20px;
+		h2 {
+			font-size: 30px;
+			margin-bottom: 30px;
+			padding-bottom: 30px;
+			border-bottom: 1px solid #E5E5E5;
+		}
+		.teacher {
+			margin-bottom: 40px;
+			display: flex;
+			flex-direction: row;
+			cursor: pointer;
+			.name {
+				flex-grow: 1;
+				font-size: 16px;
+				h3 {font-weight: 400;}
+				.info {
+					color: $red;
+					font-size: 14px;
+					font-weight: 700;
+					span {
+						&:after { content: ','; }
+						&:last-child:after { content: ''; }
+					}
+				}
+			}
+			.date {
+				color: rgba(69,61,61,0.5);
+				font-size: 14px;
+			}
+			&.active {
+				.name h3 { font-weight: 700; }
+			}
+		}
+	}
+	.author-thumb {
+		flex: 0 0 40px;
+		height: 40px;
+		background-color: #f4f4f4;
+		border-radius: 50%;
+		margin-right: 10px;
+	}
+	.chat-window {
+		height: calc(100vH - 300px);
+		background-color: white;
+		.chat-header {
+			background-color: #453D3D;
+			padding: 15px 30px;
+			color: white;
+			display: flex;
+			flex-direction: row;
+			h3 {
+				color: white;
+				flex-grow: 1;
+			}
+			span {
+				font-size: 30px;
+				cursor: pointer;
+			}
+		}
+		.chat-content {
+			opacity: 0;
+			background-color: white;
+			padding: 30px;
+			height: calc(100% - 110px);
+			overflow: auto;
+			transition: opacity 0.3s;
+			a {
+				color: $red;
+				font-weight: 700;
+				text-align: center;
+				display: block;
+			}
+			.chat-message {
+				width: 80%;
+				display: flex;
+				flex-direction: row;
+				margin-bottom: 20px;
+				color: rgba(69,61,61,0.5);
+				font-size: 14px;
+				
+				.message {
+				}
+				.content {
+					padding: 10px;
+					background-color: #f4f4f4;
+					
+					width: 100%;
+				}
+				.details {
+					margin-top: 10px;
+				}
+				&.author {
+					margin-left: 20%;
+					justify-content: flex-end;
+					.content {
+						background-color: rgba(69,61,61,0.2);
+					}
+					.details {
+						text-align: right;
+					}
+				}
+			}
+		}
+		.chat-footer {
+			background-color: #d8d8d8;
+			height: 55px;
+			form {
+				width: 100%;
+				display: flex;
+				flex-direction: row;
+				input {
+					background-color: transparent;
+					border: 0;
+					height: 55px;
+					line-height: 55px;
+					&[type="text"]{
+						background-image: url('../img/courses/send_message.png');
+						background-position: left 20px center;
+						background-repeat: no-repeat;
+						padding-left: 50px;
+					}
+					&[type="submit"]{
+						color: $red;
+						font-weight: 700;
+						padding-right: 50px;
+						background-image: url('../img/chevron_right_s.svg');
+						background-position: right 20px center;
+						background-repeat: no-repeat;
+						cursor: pointer;
+					}
+				}
+			}
+			
+		}
+	}
+} 

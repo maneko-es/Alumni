@@ -1,0 +1,34 @@
+@import "variables"; 
+@import "fonts"; 
+@import "base"; 
+@import "typography"; 
+
+// COMPONENTS
+@import "components/forms";
+@import "components/buttons";
+@import "components/sliders";
+
+// PARTIALS
+@import "partials/header"; 
+@import "partials/footer"; 
+
+// PAGES
+@import "pages/login"; 
+@import "pages/home"; 
+@import "pages/courses"; 
+@import "pages/blog"; 
+@import "pages/pageintro"; 
+@import "pages/faqs"; 
+@import "pages/aurea"; 
+@import "pages/legal"; 
+
+// SINGLES
+@import "singles/post"; 
+@import "singles/course"; 
+
+// CART
+@import "checkout/cart"; 
+@import "checkout/checkout"; 
+
+
+// MEDIAQUERIES

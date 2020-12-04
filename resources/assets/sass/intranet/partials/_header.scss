@@ -1,0 +1,99 @@
+header {
+	height: 80px;
+	line-height: 80px;
+	border-bottom: 1px solid #f4f4f4;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	#logo, #breadcrumbs {
+		height: 80px;
+		line-height: 80px;
+	}
+	#logo {
+		padding: 0 0 0 24px;
+		float: none;
+		width: $menuW;
+		border-right: 1px solid #f4f4f4;
+		border-bottom: 1px solid #f4f4f4;
+		path, polygon {
+			fill: $gray !important;
+		}
+	}
+	#breadcrumbs {
+		flex-grow: 1;
+		font-weight: 700;
+		color: #D8D8D8;
+		padding: 0 24px;
+		border-bottom: 1px solid #f4f4f4;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+	#user_menu {
+		width: $userW;
+		padding: 0;
+		border-left: 1px solid #f4f4f4;
+		position: relative;
+		.menu_trigger {
+			position: relative;
+			z-index: 1;
+			background-color: white;
+			width: 100%;
+			height: 100%;
+			padding: 0 24px;
+			border-bottom: 1px solid #f4f4f4;
+			display: flex;
+			align-items: center;
+			span {
+				flex-grow: 1;
+				display: block;
+				width: calc(100% - 60px);
+				padding-right: 15px;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+			svg {
+				transition: all 0.4s;
+			}
+		}
+		.thumb {
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			display: inline-block;
+			background-color: $grayM;
+			margin-right: 15px;
+		}
+		nav {
+			width: 100%;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			background-color: white;
+			padding: 12px 0;
+			transform: translateY(-100%);
+			z-index: 0;
+			transition: all 0.4s;
+			a {
+				display: block;
+				padding: 15px 24px;
+				line-height: 1em;
+			}
+			svg {
+				margin-right: 5px;
+			}
+		}
+		&:hover {
+			nav {
+				transform: translateY(0);
+			}
+			.menu_trigger {
+				svg {
+					transform: rotate(90deg);
+				}
+			}
+		}
+	}
+}
