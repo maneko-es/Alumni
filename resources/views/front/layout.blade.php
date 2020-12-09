@@ -8,10 +8,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
-    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url('css/bootstrap/bootstrap.min.css')}}">
 
-    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ url('slick/slick.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url('slick/slick-theme.css')}}"/>
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title') - CIC Alumni</title>
@@ -25,9 +25,9 @@
 
     <script type="text/javascript" src="{{ url('js/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ url('js/bootstrap/bootstrap.min.js') }}"></script>
-    <script type="text/javascript" src="slick/slick.min.js"></script>
-    <script type="text/javascript" src='js/app.js' defer></script>
-    <script type="text/javascript" src="js/custom.js" defer></script>
+    <script type="text/javascript" src="{{ url('slick/slick.min.js')}}"></script>
+    <script type="text/javascript" src='{{ url('js/app.js')}}' defer></script>
+    <script type="text/javascript" src="{{ url('js/custom.js')}}" defer></script>
 
     <!-- Cookie Consent by https://www.FreePrivacyPolicy.com -->
     <script type="text/javascript" src="//www.freeprivacypolicy.com/public/cookie-consent/3.1.0/cookie-consent.js"></script>

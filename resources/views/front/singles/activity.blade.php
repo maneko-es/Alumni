@@ -1,9 +1,9 @@
 @extends('front.layout')
-@section('body_class','activity activity-single')
 @section('title', $activity->title)
-
+@section('body_class','activity activity-single')
 @section('content')
-<main class=" section-paddings">
+
+<main class="section-paddings">
     <div class="container">
         <div class="row">
             <a class="activity-back col-xs-12 col-md-4" href="{{ route('activitats') }}"><i class="fas fa-chevron-left"></i>&nbsp;&nbsp; Activitats</a>
