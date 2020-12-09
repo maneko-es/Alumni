@@ -45,6 +45,7 @@ class PublicController extends Controller
         $page = Page::find(3);
         $intro = $page->blocks()->first();
         $activities = Activity::paginate(15);
+        $activities = Activity::where('published', true)->get();
         $schools = School::all();
         $categories = Category::where('category_id',5)->get();
 

@@ -57,7 +57,8 @@
 	                        $bodyCut = array_slice($bodyArray,0,30);
 	                        $excerpt = implode(' ',$bodyCut);
 	                        ?>
-	                        <p>{{ $excerpt }}@if(count($bodyArray) > 30)...@endif</p>
+	                        {{-- <p>{{ $excerpt }}@if(count($bodyArray) > 30)...@endif</p> --}}
+	                        <p>{!! substr($activity->body, 0, 50) !!}</p>
 						<div class="activitat-footer">
 							<div class="activitat-footer-item">
 								<i class="fas fa-calendar-week "></i>{{ $activity->date }}
@@ -81,7 +82,8 @@
 	                        $bodyCut = array_slice($bodyArray,0,30);
 	                        $excerpt = implode(' ',$bodyCut);
 	                        ?>
-	                        <p>{{ $excerpt }}@if(count($bodyArray) > 30)...@endif</p>
+	                        {{-- <p>{{ $excerpt }}@if(count($bodyArray) > 30)...@endif</p> --}}
+	                        <p>{!! substr($activity->body, 0, 50) !!}</p>
 						</div>
 					</a>
 				</div>

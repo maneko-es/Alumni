@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title') - CIC Alumni</title>
   </head>
@@ -25,7 +26,7 @@
     <script type="text/javascript" src="{{ url('js/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ url('js/bootstrap/bootstrap.min.js') }}"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script>
-    <script type="text/javascript" src="{{ url('js/app.js') }}" defer></script>
+    <script type="text/javascript" src='js/app.js' defer></script>
     <script type="text/javascript" src="js/custom.js" defer></script>
 
     <!-- Cookie Consent by https://www.FreePrivacyPolicy.com -->
