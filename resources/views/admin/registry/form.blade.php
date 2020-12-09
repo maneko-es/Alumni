@@ -1,5 +1,5 @@
-<div class="row">
-    <div class="col-sm-7">
+<div class="row mb-5">
+    <div class="col-sm-12">
         <div class="panel panel-default">
             <div class="panel-heading">{{ trans('messages.content') }}</div>
             <div class="panel-body">
@@ -47,7 +47,7 @@
                             <input type="submit" value="Rebutjar" class="btn btn-warning btn-md">
                         </form></p>
                         <p>S'enviarà un correu tipus "Posa't en contacte amb el CIC"</p>
-                    
+
                     @elseif($entry->status == 'accepted' && $entry->user_id)
                         <h3>Aquest registre ha estat acceptat. S'ha creat l'usuari amb id {{$entry->user_id}}.</h3>
                     @elseif($entry->status == 'denied')
