@@ -115,7 +115,7 @@
 	border: none;
 	cursor: pointer;
 	text-transform: uppercase;
-	width: 350px;
+	width: 100%;
 }
 #acceptanceModal .modal-content {
 	box-shadow: none;

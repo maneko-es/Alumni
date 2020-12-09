@@ -144,8 +144,15 @@ Route::group(
         Route::get('/' . $route . '/trash', $controller . '@trash'); Route::delete('/' . $route . '/soft-delete/{id}', $controller . '@softDelete'); Route::get('/' . $route . '/restore/{id}', $controller . '@restore'); Route::get('/' . $route . '/order/{order}', $controller . '@order'); Route::post('/' . $route . '/upload', $controller . '@upload'); Route::resource('/' . $route, $controller);
         
         // Activity
-        $class = new Activity; $controller = $class->getControllerName(); $route = str_slug($class->getSingularTableName());
-        Route::get('/' . $route . '/trash', $controller . '@trash'); Route::delete('/' . $route . '/soft-delete/{id}', $controller . '@softDelete'); Route::get('/' . $route . '/restore/{id}', $controller . '@restore'); Route::get('/' . $route . '/order/{order}', $controller . '@order'); Route::post('/' . $route . '/upload', $controller . '@upload'); Route::resource('/' . $route, $controller);
+        $class = new Activity; 
+        $controller = $class->getControllerName(); 
+        $route = str_slug($class->getSingularTableName());
+        Route::get('/' . $route . '/trash', $controller . '@trash'); 
+        Route::delete('/' . $route . '/soft-delete/{id}', $controller . '@softDelete'); 
+        Route::get('/' . $route . '/restore/{id}', $controller . '@restore'); 
+        Route::get('/' . $route . '/order/{order}', $controller . '@order'); 
+        Route::post('/' . $route . '/upload', $controller . '@upload'); 
+        Route::resource('/' . $route, $controller);
         
         // Promotion
         $class = new Promotion; $controller = $class->getControllerName(); $route = str_slug($class->getSingularTableName());

@@ -47,7 +47,7 @@ class IntranetController extends MyController
         if($user->preferred_promotion){
             $promotion = Promotion::find($user->preferred_promotion);
         } else {
-            $promotion = $promotions->first();
+            $promotion = $user->promotions->first();
         }
         $galleries = $promotion->galleries()->paginate(9);
         $categories = Category::where('category_id',11)->get();

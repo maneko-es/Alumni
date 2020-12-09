@@ -800,6 +800,7 @@ h2 {
 .avantatges-1-form .menu-select select {
   border: none;
   padding-left: 0;
+  outline: none;
 }
 
 .avantatges-1-form .menu-select i {
@@ -1152,6 +1153,9 @@ input.X:checked + label span:before {
   color: #144577;
   font-family: Graphik;
   vertical-align: middle;
+  text-align: center;
+  display: block;
+  line-height: 15px;
 }
 
 .activitats-banner {

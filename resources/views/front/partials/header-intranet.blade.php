@@ -23,6 +23,7 @@ $route = Route::currentRouteName();
                 </div>
 
                 <div class="personal-menu">
+                    <h2>HOLA</h2>
                     <?php $notifications = $user->notifications()->where('promotion_id',$promotion->id)->wherePivot('seen',0); ?>
                     @if($notifications->count() > 0)
                     <div class="notifications school-background">
@@ -32,12 +33,14 @@ $route = Route::currentRouteName();
                             @foreach($notifications->get() as $notification)
                                 @switch($notification->type)
                                     @case('gallery')
+                                    @if($notification->gallery != null)
                                     <a href="{{ route('gallery-single',['slug'=>$notification->gallery->slug]) }}" class="school-color">
                                         <div class="message">
                                             <div class="title">Nou Àlbum </div>
                                             <div class="body"> S'ha afegit a la teva galeria alumni l'àlbum "{{ $notification->gallery->title }}" </div>
                                         </div>
                                     </a>
+                                    @endif
                                     @break
 
                                     @case('mate')
@@ -49,12 +52,14 @@ $route = Route::currentRouteName();
                                     </a>
                                     @break
                                     @case('tag')
+                                    @if($notification->picture != null)
                                     <a href="{{ route('picture-single',['slug'=>$notification->picture->gallery->slug,'id'=>$notification->picture_id]) }}" class="school-color">
                                         <div class="message">
                                             <div class="title">Nova Etiqueta</div>
                                             <div class="body">T'han etiquetat a una fotografia</div>
                                         </div>
                                     </a>
+                                    @endif
                                     @break
                                 @endswitch
                             @endforeach

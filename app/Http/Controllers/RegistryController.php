@@ -42,6 +42,9 @@ class RegistryController extends Controller
 
             $registry->save();
 
+            $school_email = School::find($registry->school_id)->email;
+            $general_email = Configuration::first()->main_mail;
+
             Mail::send('emails.registry', ['registry' => $registry, 'school_email'=>$school_email,'general_email'=>$general_email], function ($m) use ($registry,$school_email, $general_email) {
                 $m->to($school_email)->cc($general_email)->subject(trans('Sol·licitud ICCIC Alumni'));
             });
@@ -60,6 +63,7 @@ class RegistryController extends Controller
         $user->email = $registry->email;
         $user->password = Hash::make($password);
         $roleStudent = Role::find(2);
+
         $user->save();
         $user->roles()->attach($roleStudent);
         $user->schools()->attach($school);
@@ -69,7 +73,9 @@ class RegistryController extends Controller
             $promotion = new Promotion;
             $promotion->school_id = $registry->school_id;
             $promotion->title = $registry->year;
+            $promotion->slug = $registry->year;
             $promotion->save();
+
         }
         $user->promotions()->attach($promotion);
 

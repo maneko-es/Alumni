@@ -19,7 +19,7 @@
 	</div>
 
 	<div class="welcome-galeria container">
-		<div class="welcome-galeria-header school-color">Galeria promoció <br>{{ $promotion->title }}</div>
+		<div class="welcome-galeria-header school-color">Galeria promoció {{ $promotion->title }}</div>
 
 		<div class="galeria-grid">
 			<?php $galleries = $promotion->galleries()->take(6)->get(); ?>
@@ -59,7 +59,7 @@
 	<div class="modal" tabindex="-1" role="dialog" id="profileModal">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
-				<h2>Hola Nicole!</h2>
+				<h2>Hola {{ $user->name }}!</h2>
 				<p>Ja gairebé has acabat de completar el teu compte. Per finalitzar el registre a Alumni vés al teu perfil i omple els camps que et falten.</p>
 				<p>Recorda que si formes part d'una altra escola, també pots afegir-la des del teu perfil.</p>
 				<a href="{{ route('profile') }}" class="school-background">Completa el teu perfil</a>

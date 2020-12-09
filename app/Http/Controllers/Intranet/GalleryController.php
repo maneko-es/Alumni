@@ -61,6 +61,9 @@ class GalleryController extends MyController
         $gallery->promotion_id = $request->promotion_id;
         $gallery->category_id = $request->category_id;
         $gallery->created_by = $user->id;
+
+        $gallery->slug = str_slug($gallery->title);
+
         $gallery->save();
 
         if($files = $request->file()['pictures']) {
@@ -97,6 +100,7 @@ class GalleryController extends MyController
                 'img' => url('images/galleries/'.$imgName),
             ]);*/
         }
+
 
         $notification = new Notification;
         $notification->type = 'gallery';
