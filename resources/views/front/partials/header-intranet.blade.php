@@ -23,7 +23,6 @@ $route = Route::currentRouteName();
                 </div>
 
                 <div class="personal-menu">
-                    <h2>HOLA</h2>
                     <?php $notifications = $user->notifications()->where('promotion_id',$promotion->id)->wherePivot('seen',0); ?>
                     @if($notifications->count() > 0)
                     <div class="notifications school-background">
