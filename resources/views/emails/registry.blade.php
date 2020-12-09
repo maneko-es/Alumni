@@ -17,10 +17,10 @@
 		    	<b>{{ $registry->name }}</b><br>
 		    	{{ $registry->email }}<br>
 		    	{{ $school->title }}<br>
-		    	Promoció {{ $promotion->title }}
+		    	Promoció {{ $registry->year }}
 		    </p>
 		    <a href="{{ url('admin/registry/'.$registry->id.'/edit') }}"
-		    	style="display: block; width: 233px; padding: 20px 40px; border: 1px solid #144577; text-transform: uppercase; font-size: 15px; text-align: center; text-decoration: none; color: #144577; margin-top: 60px;" 
+		    	style="display: block; width: 233px; padding: 20px 40px; border: 1px solid #144577; text-transform: uppercase; font-size: 15px; text-align: center; text-decoration: none; color: #144577; margin-top: 60px;"
 		    	>Validar sol·licitud</a>
 		</div>
 

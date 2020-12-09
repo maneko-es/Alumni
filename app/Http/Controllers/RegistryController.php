@@ -23,11 +23,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Routing\Redirector;
 
 class RegistryController extends Controller
-{  
-    
+{
+
     public function saveRegistry(Request $request){
         $exists = User::where('email',$request->email)->first();
-        //dd($exists->id);
         if($exists){
             return redirect()->back()->with("err","Ja existeix un usuari amb aquesta direcció de correu. Per afegir altres promocions, ves al teu perfil." );
         } elseif(!is_numeric($request->year)) {
@@ -42,11 +41,11 @@ class RegistryController extends Controller
 
             $registry->save();
 
-            $school_email = School::find($registry->school_id)->email;
+            $school = School::find($registry->school_id);
             $general_email = Configuration::first()->main_mail;
 
-            Mail::send('emails.registry', ['registry' => $registry, 'school_email'=>$school_email,'general_email'=>$general_email], function ($m) use ($registry,$school_email, $general_email) {
-                $m->to($school_email)->cc($general_email)->subject(trans('Sol·licitud ICCIC Alumni'));
+            Mail::send('emails.registry', ['registry' => $registry, 'school'=>$school,'general_email'=>$general_email], function ($m) use ($registry,$school, $general_email) {
+                $m->to($school->email)->cc($general_email)->subject(trans('Sol·licitud ICCIC Alumni'));
             });
 
             return redirect()->back()->with('success','La teva sol·licitud ha quedat registrada.');

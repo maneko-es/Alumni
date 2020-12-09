@@ -12,7 +12,7 @@
 				</tr>
 			</table>
 		</div>
-		
+
 
 		<div style="padding: 80px 30px 50px">
 
@@ -24,12 +24,12 @@
 		    	La seva sol·licitud ha estat acceptada, pot accedir al lloc web d’Alumni amb les següents credencials:
 		    </p>
 		    <p style="margin-bottom: 30px; line-height: 1.5em">
-		    	<b>{{ $user->name }}</b><br>
+		    	<b>{{ $user->email }}</b><br>
 		    	{{ $password }}
 		    </p>
 
 		    <a href="{{ url('intranet') }}"
-		    	style="display: block; width: 233px; padding: 20px 40px; border: 1px solid #144577; text-transform: uppercase; font-size: 15px; text-align: center; text-decoration: none; color: #144577; margin-top: 50px;" 
+		    	style="display: block; width: 233px; padding: 20px 40px; border: 1px solid #144577; text-transform: uppercase; font-size: 15px; text-align: center; text-decoration: none; color: #144577; margin-top: 50px;"
 		    	>ACCEDIR A ALUMNI</a>
 		</div>
 

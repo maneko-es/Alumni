@@ -792,15 +792,23 @@ h2 {
   }
 }
 
+.avantatges-1-form form {
+  font-family: 'GraphikLight';
+  font-size: 16px;
+  color: #000000;
+  font-weight: 100;
+}
+
 .avantatges-1-form .menu-select {
   max-width: revert;
-  color: #144577;
+  /*color: #144577;*/
 }
 
 .avantatges-1-form .menu-select select {
   border: none;
   padding-left: 0;
   outline: none;
+  /*color: #144577;*/
 }
 
 .avantatges-1-form .menu-select i {
@@ -808,25 +816,25 @@ h2 {
 }
 
 .avantatges-1-form ::-webkit-input-placeholder {
-  color: #144577;
+  /*color: #144577;*/
   font-family: GraphikLight;
   font-size: 15px;
 }
 
 .avantatges-1-form :-ms-input-placeholder {
-  color: #144577;
+  /*color: #144577;*/
   font-family: GraphikLight;
   font-size: 15px;
 }
 
 .avantatges-1-form ::-ms-input-placeholder {
-  color: #144577;
+  /*color: #144577;*/
   font-family: GraphikLight;
   font-size: 15px;
 }
 
 .avantatges-1-form ::placeholder {
-  color: #144577;
+  /*color: #144577;*/
   font-family: GraphikLight;
   font-size: 15px;
 }
@@ -872,7 +880,7 @@ h2 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   -webkit-column-gap: 20px;
-          column-gap: 20px;
+  column-gap: 20px;
   grid-template-rows: auto;
 }
 

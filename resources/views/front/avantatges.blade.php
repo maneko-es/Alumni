@@ -37,7 +37,7 @@
     <div class="consentiment">
       {!! $blocks['2']->body !!}
       <p><a style="font-family:Graphik;" href="/privacy">Informació addicional sobre Protecció de Dades</a></p>
-  		<input type="checkbox" name="chk3" id="chk3" class="chkrad X fade" required="required"><label for="chk3"><span></span>{!! $blocks['3']->body !!}</label>
+  		<input type="checkbox" name="chk3" id="chk3" class="chkrad X fade" required><label for="chk3"><span></span>{!! $blocks['3']->body !!}</label>
     </div>
   		</form>
   </div>
