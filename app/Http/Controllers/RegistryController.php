@@ -68,13 +68,13 @@ class RegistryController extends Controller
         $user->schools()->attach($school);
 
         $promotion = Promotion::where('school_id',$registry->school_id)->whereTranslation('title',$registry->year)->first();
+        // dd($promotion);
         if(!$promotion){
             $promotion = new Promotion;
             $promotion->school_id = $registry->school_id;
             $promotion->title = $registry->year;
             $promotion->slug = $registry->year;
             $promotion->save();
-
         }
         $user->promotions()->attach($promotion);
 
