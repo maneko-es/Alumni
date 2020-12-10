@@ -11,7 +11,7 @@
     	color: white !important;
     }
 </style>
-<main class="section-paddings">
+<main class="container section-paddings">
 	<div class="profile-header">
 		<h3 class="school-color">#ALUMNICCIC</h3>
 		<h1>Perfil</h1>
@@ -74,36 +74,34 @@
 
 			<div id="schools_fake" class="form-school">
 				<div id="schools">
-					<div class="form-row">
-						<div class="school">
-							<label for="select-school">Escola</label>
-							<div  id="select-school">
-								@if($user->promotions()->count() > 0)
-								<div id="schools_container" >
-									@foreach($user->promotions()->get() as $promotion)
-									<h4>{{ $promotion->school()->first()->title }} - {{ $promotion->title }}</h4>
-									@endforeach
+					@foreach($user->promotions()->get() as $promotion)
+						<div class="form-row">
+							<div class="school">
+								<label for="select-school">Escola</label>
+								<div  id="select-school">
+									<div id="schools_container" >
+										<h4>{{ $promotion->school()->first()->title }} - {{ $promotion->title }}</h4>
+									</div>
+									
 								</div>
-								@endif
-
-								<select name="school" autocomplete="off">
-									@foreach($schools as $sschool)
-									<option value="{{ $sschool->id }}">{{ $sschool->title }}</option>
-									@endforeach
-								</select>
-
 							</div>
-						</div>
-						<div class="promo" style="flex-direction: column;">
-							@if($user->promotions()->count() > 0)
-								@foreach($user->promotions()->get() as $promotion)
-								<h4>&nbsp;</h4>
-								@endforeach
-							@endif
-							<div><label for="promo">Any promoció</label>
-							<input autocomplete="off" name="year" type="text"></div>
-						</div>
+
+							@endforeach
 					</div>
+							<div class="form-row">
+								<div class="school">
+									
+								<select name="school" autocomplete="off">
+										@foreach($schools as $sschool)
+										<option value="{{ $sschool->id }}">{{ $sschool->title }}</option>
+										@endforeach
+									</select>
+								</div>
+								<div class="promo" style="flex-direction: column;">									
+									<div><label for="promo">Any promoció</label>
+									<input autocomplete="off" name="year" type="text"></div>
+								</div>
+							</div>
 				</div>
 				<a id="afegirEscola">Afegir escola</a>
 			</div>

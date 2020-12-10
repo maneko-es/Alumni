@@ -3,7 +3,8 @@
         <div class="panel panel-default">
             <div class="panel-heading">{{ trans('messages.content') }}</div>
             <div class="panel-body">
-                @if(!$_GET['registry'])
+               {{--  @if(!$_GET['registry']) --}}
+               @if(!$entry)
                     @include('admin.partials.form-inputs.base', [
                         'type' => 'text',
                         'name' => 'name',
@@ -28,35 +29,38 @@
                         'elems' => $roles,
                     ])
                 @else
-                <?php $registry = App\Registry::find($_GET['registry']); ?>
+
                     @include('admin.partials.form-inputs.base', [
                         'type' => 'text',
                         'name' => 'name',
-                        'old_input' => $registry->name,
-                        'attributes' => ['readonly']
+                        'old_input' => $entry->name,
+
                     ])
                     @include('admin.partials.form-inputs.base', [
                         'type' => 'text',
                         'name' => 'email',
-                        'old_input' => $registry->email,
+                        'old_input' => $entry->email,
                         'attributes' => ['readonly']
                     ])
                     @include('admin.partials.form-inputs.base', [
-                        'type' => 'text',
-                        'name' => 'school',
-                        'old_input' => App\School::find($registry->school_id)->title,
-                        'attributes' => ['readonly']
+                        'type' => 'select',
+                        'name' => 'schools',
+                        'multiple' => true,
+                        'elems' => $schools,
+                        'old_input' => $schools,
+
                     ])
                     @include('admin.partials.form-inputs.base', [
                         'type' => 'hidden',
                         'name' => 'school_id',
-                        'old_input' => $registry->school_id,
+                        'old_input' => $entry->schools->first->id,
                     ])
                     @include('admin.partials.form-inputs.base', [
-                        'type' => 'text',
+                        'type' => 'select',
                         'name' => 'year',
-                        'old_input' => $registry->year,
-                        'attributes' => ['readonly']
+                        'multiple' => true,
+                        'elems' => $promotions,
+                        'old_input' => $promotions,
                     ])
                     @include('admin.partials.form-inputs.base', [
                         'type' => 'password',
@@ -78,7 +82,10 @@
         </div>
     </div>
 
-    <div class="col-sm-5">
-
-    </div>
+</div>
+<div class="form-group">
+    <button type="submit" class="btn btn-primary">
+        <i class="fa fa-btn fa-save"></i>
+        {{ trans('messages.save') }}
+    </button>
 </div>

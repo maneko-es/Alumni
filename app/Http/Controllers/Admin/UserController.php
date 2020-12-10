@@ -93,13 +93,18 @@ class UserController extends AdminController
     public function edit($id)
     {
         $roles = Role::getRolesList();
-
         $entry = $this->model->with('roles')->findOrFail($id);
         $entry['roles'] = $entry->getUserRolesLists();
-
+        $schools = $entry->schools->map(function($school){
+            return $school->title;
+        });
+        // dd($entry->promotions->first()->title);
+        $promotions = $entry->promotions->map(function($promotion){
+            return $promotion->title;
+        });
         array_forget($entry, 'password');
 
-        return parent::renderEdit(new UpdateRequest, compact('entry', 'roles'));
+        return parent::renderEdit(new UpdateRequest, compact('entry', 'roles', 'schools', 'promotions'));
     }
 
     /**

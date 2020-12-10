@@ -1,5 +1,7 @@
 # Laravel
 .env
+/html/galleries
+/html/profile
 
 # IDE
 *.sublime-workspace

@@ -3081,6 +3081,10 @@ footer h3 {
   }
 }
 
+#schools .form-row {
+  grid-template-columns: 1fr 1fr !important;
+}
+
 .form-container .form-school .form-row .promo {
   position: relative;
   height: 30px;

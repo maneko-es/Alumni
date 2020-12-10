@@ -3,6 +3,8 @@
         <div class="panel panel-default">
             <div class="panel-heading">{{ trans('messages.content') }}</div>
             <div class="panel-body">
+                <form action="{{ route('accept-registry') }}" method="post">
+                                {{ csrf_field() }}
                     @include('admin.partials.form-inputs.base', [
                         'type' => 'text',
                         'name' => 'name',
@@ -30,15 +32,13 @@
                         'type' => 'text',
                         'name' => 'year',
                         'old_input' => $entry->year,
-                        'attributes' => ['readonly']
                     ])
                     <hr>
                     @if(!$entry->status)
-                        <p><form action="{{ route('accept-registry') }}" method="post">
-                            {{ csrf_field() }}
+                        <p>
                             <input type="hidden" name="registry_id" value="{{ $entry->id }}">
                             <input type="submit" class="btn btn-success btn-md" value="Acceptar i crear usuari">
-                        </form></p>
+                        </p>
                         <p>Es crearà un usuari i s'enviarà un missatge amb la contrassenya a l'email indicat.</p>
                         <hr>
                         <p><form action="{{ route('deny-registry') }}" method="post">
@@ -53,6 +53,7 @@
                     @elseif($entry->status == 'denied')
                         <h3>Aquest registre ha estat rebutjat.</h3>
                     @endif
+                    </form>
                 </div>
             </div>
         </div>
