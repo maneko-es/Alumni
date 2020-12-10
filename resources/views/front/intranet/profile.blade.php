@@ -85,9 +85,8 @@
 									
 								</div>
 							</div>
-
-							@endforeach
-					</div>
+						</div>
+					@endforeach
 							<div class="form-row">
 								<div class="school">
 									
