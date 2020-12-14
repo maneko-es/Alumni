@@ -32,7 +32,6 @@ class RegistryController extends Controller
         } elseif(!is_numeric($request->year)) {
             return redirect()->back()->with("err","L'any de promoció ha de ser un número" );
         } else {
-
             $registry = new Registry;
             $registry->name = $request->name;
             $registry->email = $request->email;
@@ -91,6 +90,17 @@ class RegistryController extends Controller
                 $m->to($user->email)->subject(trans('Sol·licitud ICCIC Alumni'));
             });
 
+            $notification = new Notification;
+            $notification->type = 'mate';
+            $notification->user_id = $user->id;
+            $notification->promotion_id = $promotion->id;
+            $notification->save();
+
+            $target = $promotion->users()->get();
+            foreach($target as $us){
+                $us->notifications()->attach($notification);
+            }
+
         } else {
             $user = User::where('email', $registry->email)->first();
             $school = School::find($registry->school_id);
@@ -106,25 +116,26 @@ class RegistryController extends Controller
                 }
                 $user->promotions()->attach($promotion);
                 $user->save();
+                
+                $registry->status = 'accepted';
+                $registry->user_id = $user->id;
+                $registry->save();
+
+                Mail::send('emails.promo-added', ['user' => $user, 'school' => $school, 'promotion' => $promotion], function ($m) use ($promotion,$user,$school) {
+                    $m->to($user->email)->subject(trans('Sol·licitud ICCIC Alumni'));
+                });
+                
+                $notification = new Notification;
+                $notification->type = 'mate';
+                $notification->user_id = $user->id;
+                $notification->promotion_id = $promotion->id;
+                $notification->save();
+
+                $target = $promotion->users()->get();
+                foreach($target as $us){
+                    $us->notifications()->attach($notification);
+                }
             }
-            $registry->status = 'accepted';
-            $registry->user_id = $user->id;
-            $registry->save();
-
-            Mail::send('emails.promo-added', ['user' => $user, 'school' => $school, 'promotion' => $promotion], function ($m) use ($promotion,$user,$school) {
-                $m->to($user->email)->subject(trans('Sol·licitud ICCIC Alumni'));
-            });
-
-        }
-        $notification = new Notification;
-        $notification->type = 'mate';
-        $notification->user_id = $user->id;
-        $notification->promotion_id = $promotion->id;
-        $notification->save();
-
-        $target = $promotion->users()->get();
-        foreach($target as $us){
-            $us->notifications()->attach($notification);
         }
         return redirect()->back();
     }
