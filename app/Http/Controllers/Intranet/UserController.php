@@ -76,7 +76,14 @@ class UserController extends IntranetController
             }
         }
         if($request->select_school_new_1 && $request->promo_1){
-            dd($request->select_school_new_0);
+            if(!$user->schools->find($request->select_school_new_1) && !Registry::where(['email' => $user->email, 'school_id' => $request->select_school_new_1])->first()){
+                $registry = new Registry;
+                $registry->name =  $request->name ;
+                $registry->email = $request->email  ;
+                $registry->school_id = $request->select_school_new_1  ;
+                $registry->year = $request->promo_1  ;
+                $registry->save();
+            }
         }
 
         $user->save();
