@@ -49,7 +49,7 @@
                         <p>S'enviarà un correu tipus "Posa't en contacte amb el CIC"</p>
 
                     @elseif($entry->status == 'accepted' && $entry->user_id)
-                        <h3>Aquest registre ha estat acceptat. S'ha creat l'usuari amb id {{$entry->user_id}}.</h3>
+                        <h3>Aquest registre ha estat acceptat.{{--  S'ha creat l'usuari amb id {{$entry->user_id}}. --}}</h3>
                     @elseif($entry->status == 'denied')
                         <h3>Aquest registre ha estat rebutjat.</h3>
                     @endif

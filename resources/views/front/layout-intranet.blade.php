@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" type="text/css" href="{{ url('css/app.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url('/css/css-fix.css') }}">
+    <script type="text/javascript" src="{{ url('js/custom.js')}}" defer></script>
 
     <style type="text/css">
         .school-color { color: {{ $school->color }} !important; }

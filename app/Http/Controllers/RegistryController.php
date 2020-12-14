@@ -53,42 +53,69 @@ class RegistryController extends Controller
     }
     public function acceptRegistry(Request $request){
         $registry = Registry::find($request->registry_id);
-        $user = new User;
-        $school = School::find($registry->school_id);
-        $random = str_shuffle('abcdefghjklmnopqrstuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ234567890!$%^&!$%^&');
-        $password = substr($random, 0, 10);
 
-        $user->name = $registry->name;
-        $user->email = $registry->email;
-        $user->password = Hash::make($password);
-        $roleStudent = Role::find(2);
+        if ( !User::where('email', $registry->email)->first() ){
 
-        $user->save();
-        $user->roles()->attach($roleStudent);
-        $user->schools()->attach($school);
+            $user = new User;
+            $school = School::find($registry->school_id);
+            $random = str_shuffle('abcdefghjklmnopqrstuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ234567890!$%^&!$%^&');
+            $password = substr($random, 0, 10);
 
-        $promotion = Promotion::where('school_id',$registry->school_id)->whereTranslation('title',$request->year)->first();
+            $user->name = $registry->name;
+            $user->email = $registry->email;
+            $user->password = Hash::make($password);
+            $roleStudent = Role::find(2);
 
-        if(!$promotion){
-            $promotion = new Promotion;
-            $promotion->school_id = $registry->school_id;
-            $promotion->title = $request->year;
-            $promotion->slug = $request->year;
-            $promotion->save();
+            $user->save();
+            $user->roles()->attach($roleStudent);
+            $user->schools()->attach($school);
+
+            $promotion = Promotion::where('school_id',$registry->school_id)->whereTranslation('title',$request->year)->first();
+
+            if(!$promotion){
+                $promotion = new Promotion;
+                $promotion->school_id = $registry->school_id;
+                $promotion->title = $request->year;
+                $promotion->slug = $request->year;
+                $promotion->save();
+            }
+            $user->promotions()->attach($promotion);
+
+            $user->save();
+
+            $registry->status = 'accepted';
+            $registry->user_id = $user->id;
+            $registry->save();
+
+            Mail::send('emails.user-accepted', ['password' => $password, 'user' => $user, 'school' => $school], function ($m) use ($password,$user,$school) {
+                $m->to($user->email)->subject(trans('Sol·licitud ICCIC Alumni'));
+            });
+
+        } else {
+            $user = User::where('email', $registry->email)->first();
+            $school = School::find($registry->school_id);
+            if(!$user->schools->find($registry->school_id)){
+                $user->schools()->attach($school);
+                $promotion = Promotion::where('school_id',$registry->school_id)->whereTranslation('title',$request->year)->first();
+                if(!$promotion){
+                    $promotion = new Promotion;
+                    $promotion->school_id = $registry->school_id;
+                    $promotion->title = $request->year;
+                    $promotion->slug = $request->year;
+                    $promotion->save();
+                }
+                $user->promotions()->attach($promotion);
+                $user->save();
+            }
+            $registry->status = 'accepted';
+            $registry->user_id = $user->id;
+            $registry->save();
+
+            Mail::send('emails.promo-added', ['user' => $user, 'school' => $school, 'promotion' => $promotion], function ($m) use ($promotion,$user,$school) {
+                $m->to($user->email)->subject(trans('Sol·licitud ICCIC Alumni'));
+            });
+
         }
-        $user->promotions()->attach($promotion);
-
-        $user->save();
-
-        $registry->status = 'accepted';
-        $registry->user_id = $user->id;
-        $registry->save();
-
-        Mail::send('emails.user-accepted', ['password' => $password, 'user' => $user, 'school' => $school], function ($m) use ($password,$user,$school) {
-            $m->to($user->email)->subject(trans('Sol·licitud ICCIC Alumni'));
-        });
-
-
         $notification = new Notification;
         $notification->type = 'mate';
         $notification->user_id = $user->id;
@@ -99,7 +126,6 @@ class RegistryController extends Controller
         foreach($target as $us){
             $us->notifications()->attach($notification);
         }
-
         return redirect()->back();
     }
 

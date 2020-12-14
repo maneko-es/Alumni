@@ -10,6 +10,7 @@ use App\Study;
 use App\School;
 use App\Promotion;
 use App\Page;
+use App\Registry;
 use Image;
 
 use Illuminate\Http\Request;
@@ -64,6 +65,19 @@ class UserController extends IntranetController
         
         if($request->has_children){ $user->has_children = $request->has_children; }
         if($request->wants_info){ $user->wants_info = $request->wants_info; }
+        if($request->select_school_new_0 && $request->promo_0){
+            if(!$user->schools->find($request->select_school_new_0) && !Registry::where(['email' => $user->email, 'school_id' => $request->select_school_new_0])->first()){
+                $registry = new Registry;
+                $registry->name =  $request->name ;
+                $registry->email = $request->email  ;
+                $registry->school_id = $request->select_school_new_0  ;
+                $registry->year = $request->promo_0  ;
+                $registry->save();
+            }
+        }
+        if($request->select_school_new_1 && $request->promo_1){
+            dd($request->select_school_new_0);
+        }
 
         $user->save();
 

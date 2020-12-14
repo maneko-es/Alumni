@@ -86,6 +86,7 @@ class RegistryController extends AdminController
      */
     public function edit(Request $request, $id)
     {
+
         $locale = $request->locale;
         $schools = School::all()->pluck('title','id');
 

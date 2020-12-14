@@ -87,7 +87,7 @@
 							</div>
 						</div>
 					@endforeach
-							<div class="form-row">
+							{{-- <div class="form-row">
 								<div class="school">
 									
 								<select name="school" autocomplete="off">
@@ -100,9 +100,9 @@
 									<div><label for="promo">Any promoció</label>
 									<input autocomplete="off" name="year" type="text"></div>
 								</div>
-							</div>
+							</div> --}}
 				</div>
-				<a id="afegirEscola">Afegir escola</a>
+				<button id="addSchool">Afegir escola</button>
 			</div>
 
 			<div class="form-status">
