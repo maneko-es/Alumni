@@ -5,7 +5,7 @@
 <?php $entry = isset($entry) ? $entry : null ?>
 
 <div class="row">
-    <div class="col-sm-8">
+    <div class="col-sm-12">
         <div class="panel panel-default">
             <div class="panel-heading">{{ trans("messages.content") }}</div>
             <div class="panel-body">
@@ -25,13 +25,19 @@
 
             </div>
         </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">
+                <i class="fa fa-btn fa-save"></i>
+                {{ trans('messages.save') }}
+            </button>
+        </div>
     </div>
-    <div class="col-sm-4">
+{{--     <div class="col-sm-4">
 
 
         @include('admin.partials.form-settings', [
             'locale_selector' => true,
             'published' => true,
         ])
-    </div>
+    </div> --}}
 </div>

@@ -37,14 +37,14 @@
                     @if(!$entry->status)
                         <p>
                             <input type="hidden" name="registry_id" value="{{ $entry->id }}">
-                            <input type="submit" class="btn btn-success btn-md" value="Acceptar i crear usuari">
+                            <input type="submit" class="btn btn-success btn-md" value="Acceptar registre">
                         </p>
                         <p>Es crearà un usuari i s'enviarà un missatge amb la contrassenya a l'email indicat.</p>
                         <hr>
                         <p><form action="{{ route('deny-registry') }}" method="post">
                             {{ csrf_field() }}
                             <input type="hidden" name="registry_id" value="{{ $entry->id }}">
-                            <input type="submit" value="Rebutjar" class="btn btn-warning btn-md">
+                            <input type="submit" value="Rebutjar registre" class="btn btn-warning btn-md">
                         </form></p>
                         <p>S'enviarà un correu tipus "Posa't en contacte amb el CIC"</p>
 

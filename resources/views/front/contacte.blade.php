@@ -16,7 +16,7 @@
   			<p>Via Augusta, 205</p>
   			<p>08021 Barcelona</p>
   			<p>93 200 11 33</p>
-  			<p>iccic@iccic.edu</p>
+  			<p>{{$mail}}</p>
   		</div>
   	</div>
   	<div class="contacte-form">

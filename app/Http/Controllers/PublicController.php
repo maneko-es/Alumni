@@ -85,8 +85,9 @@ class PublicController extends Controller
         $page = Page::find(5);
         $intro = $page->blocks()->first();
         $schools = School::all();
+        $mail = Configuration::first()->main_mail;
 
-        return view('front.contacte',compact('page','intro','schools'));
+        return view('front.contacte',compact('page','intro','schools', 'mail'));
     }
         public function sendContact(Request $request){
             $form = $request->all();
