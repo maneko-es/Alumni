@@ -41,11 +41,14 @@
                         </p>
                         <p>Es crearà un usuari i s'enviarà un missatge amb la contrassenya a l'email indicat.</p>
                         <hr>
-                        <p><form action="{{ route('deny-registry') }}" method="post">
+                        <p>
+                        </form>
+                        <form action="{{ route('deny-registry') }}" method="post">
                             {{ csrf_field() }}
                             <input type="hidden" name="registry_id" value="{{ $entry->id }}">
                             <input type="submit" value="Rebutjar registre" class="btn btn-warning btn-md">
-                        </form></p>
+                        </form>
+                    </p>
                         <p>S'enviarà un correu tipus "Posa't en contacte amb el CIC"</p>
 
                     @elseif($entry->status == 'accepted' && $entry->user_id)
@@ -53,7 +56,6 @@
                     @elseif($entry->status == 'denied')
                         <h3>Aquest registre ha estat rebutjat.</h3>
                     @endif
-                    </form>
                 </div>
             </div>
         </div>
