@@ -85,6 +85,9 @@ class UserController extends IntranetController
                 $registry->save();
             }
         }
+        if($request->password){
+            $user->password = Hash::make($request->password);
+        }
 
         $user->save();
 

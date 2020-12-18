@@ -45,6 +45,9 @@
 						<label for="email">Correu electrònic:</label>
 						<input name="email" type="email" @if($user->email) value="{{ $user->email }}" @endif>
 					</div>
+					<div class="form-row">
+						<label for="password">Clau de pas</label><input type="password"  id="password" name="password" placeholder="*********">
+					</div>
 
 					<div class="form-row">
 						<label for="birthdate">Data de naixement</label>
@@ -72,12 +75,12 @@
 				</div>
 			</div>
 
-			<div id="schools_fake" class="form-school">
+			<div id="schools_container" class="profile-section">
 				<div id="schools">
+					<h3>Escola</h3>
 					@foreach($user->promotions()->get() as $promotion)
 						<div class="form-row">
 							<div class="school">
-								<label for="select-school">Escola</label>
 								<div  id="select-school">
 									<div id="schools_container" >
 										<h4>{{ $promotion->school()->first()->title }} - {{ $promotion->title }}</h4>
@@ -105,10 +108,10 @@
 				<button id="addSchool">Afegir escola</button>
 			</div>
 
-			<div class="form-status">
+			<div class="form-status profile-section">
 				<div class="form-row">
 					<div class="situacio-actual">
-						<div class="status-title">Situació actual</div>
+						<h3>Situació actual</h3>
 						<div class="radio-buttons">
 							<div class="radio-option">
 								<label><input type="radio" name="situation" value="Estudiant" @if($user->situation == 'Estudiant') checked="" @endif>Estudiant</label>
@@ -173,6 +176,7 @@
 					<label for="privacy"><input checked="checked" type="checkbox" id="privacy" required="required"> He llegit i accepto la <a href="#">política de privacitat</a>. Text legal</label>
 				</div>
 			</div>
+			
 
 			<input type="submit" value="Guardar" id="send-button" class="school-background">
 		</form>
@@ -195,6 +199,7 @@
 		{{ csrf_field() }}
 		<input type="file" name="img" id="img" style="visibility: hidden;">
 	</form>
+
 </main>
 @endsection
 
