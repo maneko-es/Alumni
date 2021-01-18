@@ -213,7 +213,7 @@ function getFormInput($entry, $field, $locale)
 function getMultilangRoutes()
 {
     $route = Request::url();
-    
+
     foreach (config('app.locales') as $k => $config_locale) {
         $elems[$k]['name'] = $config_locale;
         $elems[$k]['url'] = $route . '?locale=' . $config_locale;
@@ -300,6 +300,14 @@ function getMedia($entry)
     }
     return $url;
 }
+
+function getAvatar($user){
+  if ($user->img){
+    return url('profile/thumbnail/'.$user->img);
+  } else {
+    return '';
+  }
+}
 function getMediaT($id)
 {
     $mediat = App\MediaOriginal::find($id);
@@ -325,7 +333,7 @@ function getUserMedia($entry)
 {
     $filename = $entry->profile_picture;
     $url = url('user-uploaded/profile-picture/'.$filename);
-    
+
     return $url;
 }
 function cleanString($text) {
@@ -424,7 +432,7 @@ function getTranslatedUrlSingle($locale,$post,$model){
         $troute = '#';
     }
 
-    
+
 
     return $troute;
 }

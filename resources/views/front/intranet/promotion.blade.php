@@ -17,8 +17,8 @@
 
 			<div class="promocio-grid-item">
 				<div class="item-photo">
-					@if(getMedia($user))
-						<?php $urlpic = getMedia($user); ?>
+					@if(getAvatar($mate))
+						<?php $urlpic = getAvatar($mate); ?>
 					@else
 						<?php $urlpic = url('profile/placeholder.svg'); ?>
 					@endif

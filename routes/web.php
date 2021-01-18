@@ -88,15 +88,15 @@ Route::group(
         Route::get('logout','UserController@frontLogout');
 
         // Mailing --------------------------------------
-        Route::get('/mailing/contact', 'MailingController@contact'); 
-        Route::get('/mailing/registry', 'MailingController@registry'); 
-        Route::get('/mailing/user-accepted', 'MailingController@userAccepted'); 
-        Route::get('/mailing/user-denied', 'MailingController@userDenied'); 
+        Route::get('/mailing/contact', 'MailingController@contact');
+        Route::get('/mailing/registry', 'MailingController@registry');
+        Route::get('/mailing/user-accepted', 'MailingController@userAccepted');
+        Route::get('/mailing/user-denied', 'MailingController@userDenied');
 
         // Users
-        Route::get('/user/trash', 'UserController@trash'); 
-        Route::delete('/user/soft-delete/{id}', 'UserController@softDelete'); 
-        Route::get('/user/restore/{id}', 'UserController@restore'); 
+        Route::get('/user/trash', 'UserController@trash');
+        Route::delete('/user/soft-delete/{id}', 'UserController@softDelete');
+        Route::get('/user/restore/{id}', 'UserController@restore');
         Route::get('/user-teacher', 'UserController@indexTeacher');
         Route::get('/user-student', 'UserController@indexStudent');
         Route::get('/user-admin', 'UserController@indexAdmin');
@@ -138,42 +138,49 @@ Route::group(
         // Block
         $class = new Block; $controller = $class->getControllerName(); $route = str_slug($class->getSingularTableName());
         Route::get('/' . $route . '/trash', $controller . '@trash'); Route::delete('/' . $route . '/soft-delete/{id}', $controller . '@softDelete'); Route::get('/' . $route . '/restore/{id}', $controller . '@restore'); Route::get('/' . $route . '/order/{order}', $controller . '@order'); Route::post('/' . $route . '/upload', $controller . '@upload'); Route::resource('/' . $route, $controller);
-        
+
         // School
         $class = new School; $controller = $class->getControllerName(); $route = str_slug($class->getSingularTableName());
         Route::get('/' . $route . '/trash', $controller . '@trash'); Route::delete('/' . $route . '/soft-delete/{id}', $controller . '@softDelete'); Route::get('/' . $route . '/restore/{id}', $controller . '@restore'); Route::get('/' . $route . '/order/{order}', $controller . '@order'); Route::post('/' . $route . '/upload', $controller . '@upload'); Route::resource('/' . $route, $controller);
-        
+
         // Activity
-        $class = new Activity; 
-        $controller = $class->getControllerName(); 
+        $class = new Activity;
+        $controller = $class->getControllerName();
         $route = str_slug($class->getSingularTableName());
-        Route::get('/' . $route . '/trash', $controller . '@trash'); 
-        Route::delete('/' . $route . '/soft-delete/{id}', $controller . '@softDelete'); 
-        Route::get('/' . $route . '/restore/{id}', $controller . '@restore'); 
-        Route::get('/' . $route . '/order/{order}', $controller . '@order'); 
-        Route::post('/' . $route . '/upload', $controller . '@upload'); 
+        Route::get('/' . $route . '/trash', $controller . '@trash');
+        Route::delete('/' . $route . '/soft-delete/{id}', $controller . '@softDelete');
+        Route::get('/' . $route . '/restore/{id}', $controller . '@restore');
+        Route::get('/' . $route . '/order/{order}', $controller . '@order');
+        Route::post('/' . $route . '/upload', $controller . '@upload');
         Route::resource('/' . $route, $controller);
-        
+
         // Promotion
-        $class = new Promotion; $controller = $class->getControllerName(); $route = str_slug($class->getSingularTableName());
-        Route::get('/' . $route . '/trash', $controller . '@trash'); Route::delete('/' . $route . '/soft-delete/{id}', $controller . '@softDelete'); Route::get('/' . $route . '/restore/{id}', $controller . '@restore'); Route::get('/' . $route . '/order/{order}', $controller . '@order'); Route::post('/' . $route . '/upload', $controller . '@upload'); Route::resource('/' . $route, $controller);
-        
+        $class = new Promotion;
+        $controller = $class->getControllerName();
+        $route = str_slug($class->getSingularTableName());
+        Route::get('/' . $route . '/trash', $controller . '@trash');
+        Route::delete('/' . $route . '/soft-delete/{id}', $controller . '@softDelete');
+        Route::get('/' . $route . '/restore/{id}', $controller . '@restore');
+        Route::get('/' . $route . '/order/{order}', $controller . '@order');
+        Route::post('/' . $route . '/upload', $controller . '@upload');
+        Route::resource('/' . $route, $controller);
+
         // Gallery
         $class = new Gallery; $controller = $class->getControllerName(); $route = str_slug($class->getSingularTableName());
         Route::get('/' . $route . '/trash', $controller . '@trash'); Route::delete('/' . $route . '/soft-delete/{id}', $controller . '@softDelete'); Route::get('/' . $route . '/restore/{id}', $controller . '@restore'); Route::get('/' . $route . '/order/{order}', $controller . '@order'); Route::post('/' . $route . '/upload', $controller . '@upload'); Route::resource('/' . $route, $controller);
-    
+
         // Perk
         $class = new Perk; $controller = $class->getControllerName(); $route = str_slug($class->getSingularTableName());
         Route::get('/' . $route . '/trash', $controller . '@trash'); Route::delete('/' . $route . '/soft-delete/{id}', $controller . '@softDelete'); Route::get('/' . $route . '/restore/{id}', $controller . '@restore'); Route::get('/' . $route . '/order/{order}', $controller . '@order'); Route::post('/' . $route . '/upload', $controller . '@upload'); Route::resource('/' . $route, $controller);
-    
+
         // Registry
         $class = new Registry; $controller = $class->getControllerName(); $route = str_slug($class->getSingularTableName());
         Route::get('/' . $route . '/trash', $controller . '@trash'); Route::delete('/' . $route . '/soft-delete/{id}', $controller . '@softDelete'); Route::get('/' . $route . '/restore/{id}', $controller . '@restore'); Route::get('/' . $route . '/order/{order}', $controller . '@order'); Route::post('/' . $route . '/upload', $controller . '@upload'); Route::resource('/' . $route, $controller);
-    
+
         // Picture
         $class = new Picture; $controller = $class->getControllerName(); $route = str_slug($class->getSingularTableName());
         Route::get('/' . $route . '/trash', $controller . '@trash'); Route::delete('/' . $route . '/soft-delete/{id}', $controller . '@softDelete'); Route::get('/' . $route . '/restore/{id}', $controller . '@restore'); Route::get('/' . $route . '/order/{order}', $controller . '@order'); Route::post('/' . $route . '/upload', $controller . '@upload'); Route::resource('/' . $route, $controller);
-    
+
         // Configuration
         $class = new Configuration; $controller = $class->getControllerName(); $route = str_slug($class->getSingularTableName());
         Route::get('/' . $route . '/trash', $controller . '@trash'); Route::delete('/' . $route . '/soft-delete/{id}', $controller . '@softDelete'); Route::get('/' . $route . '/restore/{id}', $controller . '@restore'); Route::get('/' . $route . '/order/{order}', $controller . '@order'); Route::post('/' . $route . '/upload', $controller . '@upload'); Route::resource('/' . $route, $controller);
