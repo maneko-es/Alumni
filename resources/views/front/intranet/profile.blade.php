@@ -18,6 +18,12 @@
 	</div>
 
 	<div class="form-container">
+		@if(session('add_school'))
+  			<div class="alert {{ Session::get('alert-class', 'alert-info') }}" role="alert"> {{ Session::get('add_school') }}</div>
+  		@endif
+  		@if(session('message'))
+  			<div class="alert {{ Session::get('alert-class', 'alert-info') }}" role="alert"> {{ Session::get('message') }}</div>
+  		@endif
 		<form action="{{ route('update-profile') }}" method="POST">
 			{{ csrf_field() }}
 
@@ -75,15 +81,15 @@
 				</div>
 			</div>
 
-			<div id="schools_container" class="profile-section">
+			<div id="schools_container" class="profile-section py-4">
 				<div id="schools">
-					<h3>Escola</h3>
+					<h3 class="mb-2">Escola</h3>
 					@foreach($user->promotions()->get() as $promotion)
 						<div class="form-row">
 							<div class="school">
 								<div  id="select-school">
 									<div id="schools_container" >
-										<h4>{{ $promotion->school()->first()->title }} - {{ $promotion->title }}</h4>
+										<div>{{ $promotion->school()->first()->title }} - {{ $promotion->title }}</div>
 									</div>
 									
 								</div>
@@ -108,16 +114,16 @@
 				<button id="addSchool">Afegir escola</button>
 			</div>
 
-			<div class="form-status profile-section">
+			<div class="form-status profile-section py-4">
 				<div class="form-row">
 					<div class="situacio-actual">
-						<h3>Situació actual</h3>
+						<h3 class="mb-2">Situació actual</h3>
 						<div class="radio-buttons">
 							<div class="radio-option">
-								<label><input type="radio" name="situation" value="Estudiant" @if($user->situation == 'Estudiant') checked="" @endif>Estudiant</label>
+								<input type="radio" name="situation" value="Estudiant" @if($user->situation == 'Estudiant') checked="" @endif>Estudiant
 							</div>
 							<div class="radio-option">
-								<label><input type="radio" name="situation" value="Treballant" @if($user->situation == 'Treballant') checked="" @endif>Treballant</label>
+								<input type="radio" name="situation" value="Treballant" @if($user->situation == 'Treballant') checked="" @endif>Treballant
 							</div>
 						</div>
 					</div>
@@ -152,7 +158,7 @@
 				</div>
 			</div>
 
-			<div class="form-children">
+			<div class="form-children py-4">
 				<div class="form-row">
 					<div class="children">
 						<div class="children-title">Actualment tens fills a l'escola?</div>

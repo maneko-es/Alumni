@@ -15,6 +15,7 @@ use Image;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 use App\Http\Requests\ProfileMediaRequest;
 
@@ -73,6 +74,8 @@ class UserController extends IntranetController
                 $registry->school_id = $request->select_school_new_0  ;
                 $registry->year = $request->promo_0  ;
                 $registry->save();
+                Session::flash('add_school', 'La nova promoció s\'afegirà al teu perfil un cop hagi estat validada');
+                Session::flash('alert-class', 'alert-success');  
             }
         }
         if($request->select_school_new_1 && $request->promo_1){
@@ -91,7 +94,9 @@ class UserController extends IntranetController
 
         $user->save();
 
-        return back()->with("success","El teu perfil s'ha actualitzat."); 
+        Session::flash('message', 'El teu perfil s\'ha actualitzat correctament.');
+        Session::flash('alert-class', 'alert-success');  
+        return back(); 
     }
 
     public function updateImage(ProfileMediaRequest $request){
@@ -134,15 +139,15 @@ class UserController extends IntranetController
                     $obj_user = User::find($user->id);
                     $obj_user->password = Hash::make($request->password);
                     $obj_user->save();
-                    return back()->with('success','Contraseña cambiada correctamente.'); 
+                    return back()->with('success','Contrassenya desada correctament.'); 
                 } else {
-                    return back()->with('error','La contraseña debe tener al menos 8 caracteres.');
+                    return back()->with('error','La contrassenya ha de contenir almenys 8 caràcters.');
                 }
             } else {
-                return back()->with('error','El campo "Contraseña" y "Repetir contraseña" deben coincidir.');
+                return back()->with('error','El camp "Contrassenya" y "Repetir contrassenya" han de coincidir.');
             }
         }  else {
-            return back()->with('error','La contraseña es incorrecta');
+            return back()->with('error','La contrassenya és incorrecta');
         }
     }
 
