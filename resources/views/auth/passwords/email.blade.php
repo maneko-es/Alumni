@@ -3,12 +3,13 @@
 
 @section('content')
 <main class="login-main section-paddings">
-    <div class="width-banner-text main-section">
-        <h3 class="yellow">#ALUMNICCIC</h3>
-        <h1 class="blue">Restableix la contrasenya</h1>
-    </div>
+    <div class="container">        
+        <div class="width-banner-text main-section">
+            <h3 class="yellow">#ALUMNICCIC</h3>
+            <h1 class="blue">Restableix la contrasenya</h1>
+        </div>
 
-    <div id="signin-form">
+        <div id="signin-form">
 
             @if (session('status'))
                 <div class="alert alert-success" role="alert">
@@ -32,6 +33,7 @@
 
                 <input type="submit" class="yellow" value="ENVIAR">
             </form>
+        </div>
     </div>
 </main>
 @endsection
