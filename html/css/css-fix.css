@@ -269,18 +269,31 @@
 	margin-bottom: 35px;
 }
 #profileModal p {
-	font-size: 25px;
+	/*font-size: 25px;*/
 	font-weight: 300;
+	font-size: 1em;
 }
 #profileModal a {
 	font-family: 'Graphik';
 	display: inline-block;
-	font-size: 15px;
+	/*font-size: 15px;*/
+	font-size: 1em;
 	color: white !important;
 	padding: 10px 20px;
 	width: 100%;
-	max-width: 375px;
+	/*max-width: 375px;*/
 	text-transform: uppercase;
+}
+
+.modal-dialog {
+	width:revert !important;
+}
+
+.modal-content p{
+	line-height: revert;
+}
+.modal-backdrop {
+	opacity: 0.5;
 }
 .galeria-header-and-search .galeria-search .crear-galeria {
     color: white;
