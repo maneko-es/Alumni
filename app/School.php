@@ -39,7 +39,8 @@ class School extends BaseModel
     protected $fillable = [
         'published',
         'color',
-        'link'
+        'link',
+        'email',
     ];
 
 
