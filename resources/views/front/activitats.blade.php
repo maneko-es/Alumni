@@ -74,7 +74,11 @@
 					<a href="{{ route('activity-single', ['slug'=>$activity->slug]) }}" >
 						<div class="item-title">{{ $activity->category->title }}</div>
 						<div class="item-card">
-							<img src="/images/activitat1.png">
+							@if($activity->medias->first())
+								<img src="{{ url('/media/original/' . $activity->medias->first()->filename) }}">
+							@else
+								<img src="/images/activitat1.png">
+							@endif
 							<div class="color-bar-card"> <div class="color1"></div> <div class="color2"></div> <div class="color3"></div> <div class="color4"></div> <div class="color5"></div> <div class="color6"></div> <div class="color7"></div> </div>
 							<h2>{{ $activity->title }}</h2>
 							<?php $body = strip_tags($activity->body);

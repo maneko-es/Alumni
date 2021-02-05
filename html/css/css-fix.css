@@ -444,3 +444,12 @@ small.cap {
 	text-align: center;
 }
 
+
+.activitats-grid {
+	grid-auto-rows: revert;
+
+}
+.item-card img {
+	height: 125px;
+	object-fit: cover;
+}
