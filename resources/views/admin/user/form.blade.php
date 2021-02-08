@@ -83,9 +83,9 @@
     </div>
 
 </div>
-<div class="form-group">
+{{-- <div class="form-group">
     <button type="submit" class="btn btn-primary">
         <i class="fa fa-btn fa-save"></i>
         {{ trans('messages.save') }}
     </button>
-</div>
+</div> --}}
