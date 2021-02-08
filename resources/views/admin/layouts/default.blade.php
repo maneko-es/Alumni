@@ -45,6 +45,7 @@
     </script>
     <script src="{{ url('vendor/ckeditor/ckeditor.js') }}"></script>
     <script src="{{ url(elixir('js/admin.js')) }}"></script>
+    <script src="{{ url('js/js-fix.js')}}"></script>
     @stack('scripts')
 </body>
 </html>

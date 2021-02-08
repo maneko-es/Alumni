@@ -1,5 +1,7 @@
 $(document).ready(function(){
   
+  $(".registry-form").parent().parent().find("button").hide();
+  
   $(".cc_overlay_lock").on('click', function(){
     $(".cc_cp_f_powered_by").text('');
   });

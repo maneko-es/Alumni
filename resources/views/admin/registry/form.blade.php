@@ -1,4 +1,4 @@
-<div class="row mb-5">
+<div class="row mb-5 registry-form">
     <div class="col-sm-12">
         <div class="panel panel-default">
             <div class="panel-heading">{{ trans('messages.content') }}</div>
