@@ -37,7 +37,7 @@ $notifications = $user->notifications()->where('promotion_id',$promotion->id)->w
                                     <a href="{{-- {{ route('gallery-single',['slug'=>$notification->gallery->slug]) }} --}}" class="school-color">
                                         <div class="message">
                                             <div class="title">Nou Àlbum </div>
-                                            <div class="body"> S'ha afegit a la teva galeria alumni l'àlbum "{{ $notification->gallery->title }}" </div>
+                                            <div class="body"> S'ha afegit un nou àlbum a la teva galeria alumni{{--  l'àlbum "{{ $notification->gallery->title }}" --}} </div>
                                         </div>
                                     </a>
                                     @endif
@@ -114,7 +114,7 @@ $notifications = $user->notifications()->where('promotion_id',$promotion->id)->w
                             <a href="{{-- {{ route('gallery-single',['slug'=>$notification->gallery->slug]) }} --}}" class="school-color">
                                 <div class="message">
                                     <div class="title">Nou Àlbum </div>
-                                    <div class="body"> S'ha afegit a la teva galeria alumni l'àlbum "{{ $notification->gallery->title }}" </div>
+                                    <div class="body"> S'ha afegit un nou àlbum a la teva galeria alumni{{--  l'àlbum "{{ $notification->gallery->title }}" --}} </div>
                                 </div>
                             </a>
                             @break
