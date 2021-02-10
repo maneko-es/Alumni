@@ -1,6 +1,7 @@
 <div class="top-bar school-background"></div>
 <?php
 $route = Route::currentRouteName();
+$notifications = $user->notifications()->where('promotion_id',$promotion->id)->wherePivot('seen',0);
 ?>
 <header class="container">
     <div id="header-intranet">
@@ -23,7 +24,7 @@ $route = Route::currentRouteName();
                 </div>
 
                 <div class="personal-menu">
-                    <?php $notifications = $user->notifications()->where('promotion_id',$promotion->id)->wherePivot('seen',0); ?>
+                    
                     @if($notifications->count() > 0)
                     <div class="notifications school-background">
                         <div class="number">{{ $notifications->count() }}</div>
@@ -33,7 +34,7 @@ $route = Route::currentRouteName();
                                 @switch($notification->type)
                                     @case('gallery')
                                     @if($notification->gallery != null)
-                                    <a href="{{ route('gallery-single',['slug'=>$notification->gallery->slug]) }}" class="school-color">
+                                    <a href="{{-- {{ route('gallery-single',['slug'=>$notification->gallery->slug]) }} --}}" class="school-color">
                                         <div class="message">
                                             <div class="title">Nou Àlbum </div>
                                             <div class="body"> S'ha afegit a la teva galeria alumni l'àlbum "{{ $notification->gallery->title }}" </div>
@@ -52,7 +53,7 @@ $route = Route::currentRouteName();
                                     @break
                                     @case('tag')
                                     @if($notification->picture != null)
-                                    <a href="{{ route('picture-single',['slug'=>$notification->picture->gallery->slug,'id'=>$notification->picture_id]) }}" class="school-color">
+                                    <a href="{{-- {{ route('picture-single',['slug'=>$notification->picture->gallery->slug,'id'=>$notification->picture_id]) }} --}}" class="school-color">
                                         <div class="message">
                                             <div class="title">Nova Etiqueta</div>
                                             <div class="body">T'han etiquetat a una fotografia</div>
@@ -110,7 +111,7 @@ $route = Route::currentRouteName();
                     @foreach($notifications->get() as $notification)
                         @switch($notification->type)
                             @case('gallery')
-                            <a href="{{ route('gallery-single',['slug'=>$notification->gallery->slug]) }}" class="school-color">
+                            <a href="{{-- {{ route('gallery-single',['slug'=>$notification->gallery->slug]) }} --}}" class="school-color">
                                 <div class="message">
                                     <div class="title">Nou Àlbum </div>
                                     <div class="body"> S'ha afegit a la teva galeria alumni l'àlbum "{{ $notification->gallery->title }}" </div>
@@ -127,7 +128,7 @@ $route = Route::currentRouteName();
                             </a>
                             @break
                             @case('tag')
-                            <a href="{{ route('picture-single',['slug'=>$notification->picture->gallery->slug,'id'=>$notification->picture_id]) }}" class="school-color">
+                            <a href="{{-- {{ route('picture-single',['slug'=>$notification->picture->gallery->slug,'id'=>$notification->picture_id]) }} --}}" class="school-color">
                                 <div class="message">
                                     <div class="title">Nova Etiqueta</div>
                                     <div class="body">T'han etiquetat a una fotografia</div>
