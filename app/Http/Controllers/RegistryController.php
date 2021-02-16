@@ -84,6 +84,7 @@ class RegistryController extends Controller
 
             $registry->status = 'accepted';
             $registry->user_id = $user->id;
+            $registry->year = $request->year;
             $registry->save();
 
             Mail::send('emails.user-accepted', ['password' => $password, 'user' => $user, 'school' => $school], function ($m) use ($password,$user,$school) {
@@ -116,7 +117,7 @@ class RegistryController extends Controller
                 }
                 $user->promotions()->attach($promotion);
                 $user->save();
-                
+
                 $registry->status = 'accepted';
                 $registry->user_id = $user->id;
                 $registry->save();
@@ -124,7 +125,7 @@ class RegistryController extends Controller
                 Mail::send('emails.promo-added', ['user' => $user, 'school' => $school, 'promotion' => $promotion], function ($m) use ($promotion,$user,$school) {
                     $m->to($user->email)->subject(trans('Sol·licitud ICCIC Alumni'));
                 });
-                
+
                 $notification = new Notification;
                 $notification->type = 'mate';
                 $notification->user_id = $user->id;

@@ -1,3 +1,3 @@
 $(document).ready(function(){
-	$(".registry-form").parent().parent().find("button").hide();
+	// $(".registry-form").parent().parent().find("button").hide();
 });

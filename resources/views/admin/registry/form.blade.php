@@ -34,12 +34,12 @@
                         'old_input' => $entry->year,
                     ])
                     <hr>
+                    <input type="hidden" name="registry_id" value="{{ $entry->id }}">
                     @if(!$entry->status)
                         <p>
-                            <input type="hidden" name="registry_id" value="{{ $entry->id }}">
                             <input type="submit" class="btn btn-success btn-md" value="Acceptar registre">
                         </p>
-                        <p>Es crearà un usuari i s'enviarà un missatge amb la contrassenya a l'email indicat.</p>
+                        <p>Es crearà un usuari i s'enviarà un missatge amb la contrassenya a l'email indicat. Es pot modificar l'any de promoció en cas que no sigui el correcte.</p>
                         <hr>
                         <p>
                         </form>
