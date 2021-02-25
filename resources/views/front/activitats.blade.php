@@ -96,98 +96,14 @@
 				<p>No hi ha resultats</p>
 			@endforelse
 
-			<?php /*<div class="activitats-item">
-		<div class="item-title">EXPOSICIÓ</div>
-		<div class="item-card">
-		<img src="/images/activitat2.png">
-		<div class="color-bar-card">
-		<div class="color1"></div><div class="color2"></div><div class="color3"></div><div class="color4"></div><div class="color5"></div><div class="color6"></div><div class="color7"></div>
-		</div>
-		<h2>Inici curs '125 anys d'història de Catalunya'</h2>
-		<p>El proper 21 de novembre s'inicia el curs “Una història de la cultura catalana”.</p>
-		</div>
-		</div>
 
-		<div class="activitats-item">
-		<div class="item-title">EXPOSICIÓ</div>
-		<div class="item-card">
-		<img src="/images/activitat3.png">
-		<div class="color-bar-card">
-		<div class="color1"></div><div class="color2"></div><div class="color3"></div><div class="color4"></div><div class="color5"></div><div class="color6"></div><div class="color7"></div>
-		</div>
-		<h2>Inici curs '125 anys d'història de Catalunya'</h2>
-		<p>El proper 21 de novembre s'inicia el curs “Una història de la cultura catalana”.</p>
-		</div>
-		</div>
-		<div class="activitats-item">
-		<div class="item-title">EXPOSICIÓ</div>
-		<div class="item-card">
-		<img src="/images/activitat4.png">
-		<div class="color-bar-card">
-		<div class="color1"></div><div class="color2"></div><div class="color3"></div><div class="color4"></div><div class="color5"></div><div class="color6"></div><div class="color7"></div>
-		</div>
-		<h2>Inici curs '125 anys d'història de Catalunya'</h2>
-		<p>El proper 21 de novembre s'inicia el curs “Una història de la cultura catalana”.</p>
-		</div>
-		</div>
-		<div class="activitats-item">
-		<div class="item-title">EXPOSICIÓ</div>
-		<div class="item-card">
-		<img src="/images/activitat5.png">
-		<div class="color-bar-card">
-		<div class="color1"></div><div class="color2"></div><div class="color3"></div><div class="color4"></div><div class="color5"></div><div class="color6"></div><div class="color7"></div>
-		</div>
-		<h2>Inici curs '125 anys d'història de Catalunya'</h2>
-		<p>El proper 21 de novembre s'inicia el curs “Una història de la cultura catalana”.</p>
-		</div>
-		</div>
-		<div class="activitats-item">
-		<div class="item-title">EXPOSICIÓ</div>
-		<div class="item-card">
-		<img src="/images/activitat6.png">
-		<div class="color-bar-card">
-		<div class="color1"></div><div class="color2"></div><div class="color3"></div><div class="color4"></div><div class="color5"></div><div class="color6"></div><div class="color7"></div>
-		</div>
-		<h2>Inici curs '125 anys d'història de Catalunya'</h2>
-		<p>El proper 21 de novembre s'inicia el curs “Una història de la cultura catalana”.</p>
-		</div>
-		</div>
-		<div class="activitats-item-alt blau">
-		<div class="trobada-title">
-		<h2>Trobada Thau Barcelona</h2>
-		<img src="/images/children-logo.png">
-		</div>
-
-		<h3>Alumni 2015</h3>
-		<p>Nam tincidunt diam vel tortor scelerisque feugiat ut nunc purus ed quam velit.</p>
-		<div class="activitat-footer">
-		<div class="activitat-footer-item">
-		<i class="fas fa-calendar-week icon-yellow"></i>14.05.20
-		</div>
-		<div class="activitat-footer-item">
-		<i class="fas fa-map-marker-alt icon-yellow"></i>Barcelona
-		</div>
-		</div>
-		</div>
-
-		<div class="activitats-item">
-		<div class="item-title">EXPOSICIÓ</div>
-		<div class="item-card">
-		<img src="/images/activitat7.png">
-		<div class="color-bar-card">
-		<div class="color1"></div><div class="color2"></div><div class="color3"></div><div class="color4"></div><div class="color5"></div><div class="color6"></div><div class="color7"></div>
-		</div>
-		<h2>Inici curs '125 anys d'història de Catalunya'</h2>
-		<p>El proper 21 de novembre s'inicia el curs “Una història de la cultura catalana”.</p>
-		</div>
-		</div>
-		</div>
-		<div class="activitats-pages">
-		<a href="">1</a>
-		<a href="">2</a>
-		<a href="">3</a>*/ ?>
-		</div>
-	</div>
+{{-- 		<div class="activitats-pages">
+  		<a href="">1</a>
+  		<a href="">2</a>
+  		<a href="">3</a>
+		</div> --}}
+	 </div>
+  </div>
 </div>
 
 @endsection
