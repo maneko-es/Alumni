@@ -75,9 +75,9 @@
 							<div class="color-bar-card"> <div class="color1"></div> <div class="color2"></div> <div class="color3"></div> <div class="color4"></div> <div class="color5"></div> <div class="color6"></div> <div class="color7"></div> </div>
 							<h2>{{ $activity->title }}</h2>
               @php
-                $body = substr($activity->body, 0, 100);
+                $body = html_entity_decode(strip_tags($activity->body));
               @endphp
-	           <p><?php echo $body; ?></p>
+	           <p>{{ Str::limit($body, 100, $end='...') }}</p>
 						</div>
 					</a>
 				</div>
