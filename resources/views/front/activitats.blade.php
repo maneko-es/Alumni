@@ -3,6 +3,7 @@
 @section('title', 'Activitats')
 
 @section('content')
+<div class="test"></div>
 <div class="activitats-banner main-section section-paddings">
 	<div class="width-banner-text container">
 		<h3 class="white">{{ $intro->hashtag}}</h3>
@@ -74,7 +75,10 @@
               <img src="<?php echo $media_src ; ?>" alt="">
 							<div class="color-bar-card"> <div class="color1"></div> <div class="color2"></div> <div class="color3"></div> <div class="color4"></div> <div class="color5"></div> <div class="color6"></div> <div class="color7"></div> </div>
 							<h2>{{ $activity->title }}</h2>
-	           <p>{!! substr($activity->body, 0, 50) !!}</p>
+              @php
+                $body = substr($activity->body, 0, 50);
+              @endphp
+	           <p><?php echo $body; ?></p>
 						</div>
 					</a>
 				</div>
@@ -83,12 +87,6 @@
 				<p>No hi ha resultats</p>
 			@endforelse
 
-
-{{-- 		<div class="activitats-pages">
-  		<a href="">1</a>
-  		<a href="">2</a>
-  		<a href="">3</a>
-		</div> --}}
 	 </div>
   </div>
 </div>
