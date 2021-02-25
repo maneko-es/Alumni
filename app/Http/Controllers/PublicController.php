@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Routing\Redirector;
 
 class PublicController extends Controller
-{  
+{
     public function __construct(Redirector $redirect)
     {
 
@@ -144,7 +144,7 @@ class PublicController extends Controller
     public function acceptCookies(){
         setcookie('cookies',true,strtotime( '+30 days' ));
 
-        return redirect()->back();      
+        return redirect()->back();
     }
 
     public function closeBanner(){

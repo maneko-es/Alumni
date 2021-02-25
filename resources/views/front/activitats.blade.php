@@ -47,6 +47,9 @@
 	<div class="activitats-container">
 		<div class="activitats-grid">
 			@forelse($activities as $activity)
+      @php
+        $media_src = $activity->medias->first() ? url('/media/original/' . $activity->medias->first()->filename) : '/images/activitat1.png';
+      @endphp
 				@if($activity->is_meeting)
 				<div class="activitats-item-alt" style="background-color: {{ $activity->school->color }}">
 					<a href="{{ route('activity-single', ['slug'=>$activity->slug]) }}" >
@@ -74,20 +77,10 @@
 					<a href="{{ route('activity-single', ['slug'=>$activity->slug]) }}" >
 						<div class="item-title">{{ $activity->category->title }}</div>
 						<div class="item-card">
-							@if($activity->medias->first())
-								<img src="{{ url('/media/original/' . $activity->medias->first()->filename) }}">
-							@else
-								<img src="/images/activitat1.png">
-							@endif
+              <img src="<?php echo $media_src ; ?>" alt="">
 							<div class="color-bar-card"> <div class="color1"></div> <div class="color2"></div> <div class="color3"></div> <div class="color4"></div> <div class="color5"></div> <div class="color6"></div> <div class="color7"></div> </div>
 							<h2>{{ $activity->title }}</h2>
-							<?php $body = strip_tags($activity->body);
-	                        $bodyArray = explode(' ',$body);
-	                        $bodyCut = array_slice($bodyArray,0,30);
-	                        $excerpt = implode(' ',$bodyCut);
-	                        ?>
-	                        {{-- <p>{{ $excerpt }}@if(count($bodyArray) > 30)...@endif</p> --}}
-	                        <p>{!! substr($activity->body, 0, 50) !!}</p>
+	           <p>{!! substr($activity->body, 0, 50) !!}</p>
 						</div>
 					</a>
 				</div>
