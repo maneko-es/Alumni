@@ -47,31 +47,25 @@
 	<div class="activitats-container">
 		<div class="activitats-grid">
 			@forelse($activities as $activity)
-      @php
-        $media_src = $activity->medias->first() ? url('/media/original/' . $activity->medias->first()->filename) : '/images/activitat1.png';
-      @endphp
+        @php
+          $media_src = $activity->medias->first() ? url('/media/original/' . $activity->medias->first()->filename) : '/images/activitat1.png';
+        @endphp
 				@if($activity->is_meeting)
-				<div class="activitats-item-alt" style="background-color: {{ $activity->school->color }}">
-					<a href="{{ route('activity-single', ['slug'=>$activity->slug]) }}" >
-						<h2>Trobada {{ $activity->school->title }}</h2>
-						<h3>{{ $activity->title }}</h3>
-						<?php $body = strip_tags($activity->body);
-	                        $bodyArray = explode(' ',$body);
-	                        $bodyCut = array_slice($bodyArray,0,30);
-	                        $excerpt = implode(' ',$bodyCut);
-	                        ?>
-	                        {{-- <p>{{ $excerpt }}@if(count($bodyArray) > 30)...@endif</p> --}}
-	                        <p>{!! substr($activity->body, 0, 50) !!}</p>
-						<div class="activitat-footer">
-							<div class="activitat-footer-item">
-								<i class="fas fa-calendar-week "></i>{{ $activity->date }}
-							</div>
-							<div class="activitat-footer-item">
-								<i class="fas fa-map-marker-alt "></i>{{ $activity->place }}
-							</div>
-						</div>
-					</a>
-				</div>
+  				<div class="activitats-item-alt" style="background-color: {{ $activity->school->color }}">
+  					<a href="{{ route('activity-single', ['slug'=>$activity->slug]) }}" >
+  						<h2>Trobada {{ $activity->school->title }}</h2>
+  						<h3>{{ $activity->title }}</h3>
+              <p>{!! substr($activity->body, 0, 50) !!}</p>
+  						<div class="activitat-footer">
+  							<div class="activitat-footer-item">
+  								<i class="fas fa-calendar-week "></i>{{ $activity->date }}
+  							</div>
+  							<div class="activitat-footer-item">
+  								<i class="fas fa-map-marker-alt "></i>{{ $activity->place }}
+  							</div>
+  						</div>
+  					</a>
+  				</div>
 				@else
 				<div class="activitats-item">
 					<a href="{{ route('activity-single', ['slug'=>$activity->slug]) }}" >
