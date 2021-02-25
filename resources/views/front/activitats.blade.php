@@ -3,7 +3,6 @@
 @section('title', 'Activitats')
 
 @section('content')
-<div class="test"></div>
 <div class="activitats-banner main-section section-paddings">
 	<div class="width-banner-text container">
 		<h3 class="white">{{ $intro->hashtag}}</h3>
@@ -76,7 +75,7 @@
 							<div class="color-bar-card"> <div class="color1"></div> <div class="color2"></div> <div class="color3"></div> <div class="color4"></div> <div class="color5"></div> <div class="color6"></div> <div class="color7"></div> </div>
 							<h2>{{ $activity->title }}</h2>
               @php
-                $body = substr($activity->body, 0, 50);
+                $body = substr($activity->body, 0, 100);
               @endphp
 	           <p><?php echo $body; ?></p>
 						</div>
