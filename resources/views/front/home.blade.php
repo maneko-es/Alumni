@@ -46,7 +46,10 @@
 		<div class="welcome-actualitat-entry entry-paddings">
 			<h3>{{ $activity->category->title }}</h3>
 			<h2>{{ $activity->title }}</h2>
-			<p>{!! substr($activity->body, 0, 100) !!}</p>
+			@php
+        $body = html_entity_decode(strip_tags($activity->body));
+      @endphp
+     <p>{{ Str::limit($body, 100, $end='...') }}</p>
 		</div>
 		@endforeach
 	</div>

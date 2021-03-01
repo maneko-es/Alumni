@@ -55,7 +55,10 @@
   					<a href="{{ route('activity-single', ['slug'=>$activity->slug]) }}" >
   						<h2>Trobada {{ $activity->school->title }}</h2>
   						<h3>{{ $activity->title }}</h3>
-              <p>{!! substr($activity->body, 0, 50) !!}</p>
+              @php
+                $body = html_entity_decode(strip_tags($activity->body));
+              @endphp
+             <p>{{ Str::limit($body, 100, $end='...') }}</p>
   						<div class="activitat-footer">
   							<div class="activitat-footer-item">
   								<i class="fas fa-calendar-week "></i>{{ $activity->date }}

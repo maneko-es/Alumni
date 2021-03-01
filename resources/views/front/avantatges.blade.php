@@ -24,7 +24,9 @@
   				<select name="school_id"  required="required">
   					<option value="" selected disabled="">Escola</option>
   					@foreach($schools as $school)
-  					<option value="{{ $school->id }}">{{ $school->title }}</option>
+              @if (!$loop->last)
+  					   <option value="{{ $school->id }}">{{ $school->title }}</option>
+              @endif
   					@endforeach
   				</select>
   				<i class="fas fa-chevron-down"></i>

@@ -59,7 +59,7 @@ class PublicController extends Controller
 
             $activitiesQuery = Activity::where('published',1);
             if($request->school_id){
-                $activitiesQuery->where('school_id',$request->school_id);
+                $activitiesQuery->where('school_id',$request->school_id)->orWhere('school_id', 7);
             }
             if($request->category_id){
                 $activitiesQuery->where('category_id',$request->category_id);
