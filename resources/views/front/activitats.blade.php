@@ -54,11 +54,11 @@
   				<div class="activitats-item-alt" style="background-color: {{ $activity->school->color }}">
   					<a href="{{ route('activity-single', ['slug'=>$activity->slug]) }}" >
   						<h2>Trobada {{ $activity->school->title }}</h2>
-  						<h3>{{ $activity->title }}</h3>
+  						<h3>{!! $activity->title !!}</h3>
               @php
                 $body = html_entity_decode(strip_tags($activity->body));
               @endphp
-             <p>{{ Str::limit($body, 100, $end='...') }}</p>
+             <p>{!! Str::limit($body, 100, $end='...') !!}</p>
   						<div class="activitat-footer">
   							<div class="activitat-footer-item">
   								<i class="fas fa-calendar-week "></i>{{ $activity->date }}
@@ -76,11 +76,11 @@
 						<div class="item-card">
               <img src="<?php echo $media_src ; ?>" alt="">
 							<div class="color-bar-card"> <div class="color1"></div> <div class="color2"></div> <div class="color3"></div> <div class="color4"></div> <div class="color5"></div> <div class="color6"></div> <div class="color7"></div> </div>
-							<h2>{{ $activity->title }}</h2>
+							<h2>{!! $activity->title !!}</h2>
               @php
                 $body = html_entity_decode(strip_tags($activity->body));
               @endphp
-	           <p>{{ Str::limit($body, 100, $end='...') }}</p>
+	           <p>{!! Str::limit($body, 100, $end='...') !!}</p>
 						</div>
 					</a>
 				</div>

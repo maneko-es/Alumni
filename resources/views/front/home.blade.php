@@ -49,7 +49,7 @@
 			@php
         $body = html_entity_decode(strip_tags($activity->body));
       @endphp
-     <p>{{ Str::limit($body, 100, $end='...') }}</p>
+     <p>{!! Str::limit($body, 100, $end='...') !!}</p>
 		</div>
 		@endforeach
 	</div>
