@@ -11,7 +11,7 @@
                 @include('admin.partials.notifications')
 
                 @yield('create-edit-form')
-                {{-- This button is hidden with js for registry form at js-fix.js --}}
+
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">
                             <i class="fa fa-btn fa-save"></i>

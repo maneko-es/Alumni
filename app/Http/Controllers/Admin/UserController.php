@@ -7,6 +7,8 @@ use App\Http\Requests\Admin\User\UserUpdateRequest as UpdateRequest;
 
 use App\User;
 use App\Role;
+use App\School;
+use App\Promotion;
 
 use App\Services\UploadManager;
 use Illuminate\Http\Request;
@@ -98,7 +100,6 @@ class UserController extends AdminController
         $schools = $entry->schools->map(function($school){
             return $school->title;
         });
-        // dd($entry->promotions->first()->title);
         $promotions = $entry->promotions->map(function($promotion){
             return $promotion->title;
         });
@@ -135,6 +136,24 @@ class UserController extends AdminController
             $request->medias = [];
         }
         $entry->medias()->sync($request->medias);
+
+        ///Update promotions
+        foreach($entry->promotions as $index => $promotion){
+          if($promotion->title !== $request["promotion_" . $index]){
+            $new_promotion = Promotion::where('school_id',$promotion->school->id)->whereTranslation('title',$request["promotion_" . $index])->first();
+            if(!$new_promotion){
+              $new_promotion = new Promotion;
+              $new_promotion->school_id = $promotion->school->id;
+              $new_promotion->title = $request["promotion_" . $index];
+              // $new_promotion->slug = $request["promotion_" . $index];
+              $new_promotion->save();
+          }
+          $entry->promotions()->detach(Promotion::find($promotion->id));
+          $entry->promotions()->attach($new_promotion);
+          $entry->save();
+          }
+        }
+
 
         return parent::redirectUpdate($entry);
     }

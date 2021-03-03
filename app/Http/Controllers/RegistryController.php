@@ -70,12 +70,11 @@ class RegistryController extends Controller
             $user->schools()->attach($school);
 
             $promotion = Promotion::where('school_id',$registry->school_id)->whereTranslation('title',$request->year)->first();
-
             if(!$promotion){
                 $promotion = new Promotion;
                 $promotion->school_id = $registry->school_id;
                 $promotion->title = $request->year;
-                $promotion->slug = $request->year;
+                // $promotion->slug = $request->year;
                 $promotion->save();
             }
             $user->promotions()->attach($promotion);
@@ -112,7 +111,7 @@ class RegistryController extends Controller
                     $promotion = new Promotion;
                     $promotion->school_id = $registry->school_id;
                     $promotion->title = $request->year;
-                    $promotion->slug = $request->year;
+                    // $promotion->slug = $request->year;
                     $promotion->save();
                 }
                 $user->promotions()->attach($promotion);

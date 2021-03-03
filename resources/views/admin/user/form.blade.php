@@ -42,26 +42,37 @@
                         'old_input' => $entry->email,
                         'attributes' => ['readonly']
                     ])
-                    @include('admin.partials.form-inputs.base', [
+{{--                     @include('admin.partials.form-inputs.base', [
                         'type' => 'select',
                         'name' => 'schools',
                         'multiple' => true,
                         'elems' => $schools,
                         'old_input' => $schools,
 
-                    ])
+                    ]) --}}
                     @include('admin.partials.form-inputs.base', [
                         'type' => 'hidden',
                         'name' => 'school_id',
                         'old_input' => $entry->schools->first->id,
                     ])
-                    @include('admin.partials.form-inputs.base', [
+
+                    <div class="form-group">
+                      <label class="control-label">Promocions</label>
+                      <input type="hidden" name="promotions_num" value="{{ $promotions->count()}}">
+                      @foreach($entry->promotions as $promotion)
+                      <div class="form-inline">
+                        <input class="form-control-plaintext" style="width:200px;border:none;" type="text" name="{{"school_" . $loop->index }}" value="{{$promotion->school->title}}" readonly>
+                        <input class="form-control" style="width:70px;" type="text" name="{{"promotion_" . $loop->index }}" value="{{$promotion->title}}">
+                      </div>
+                      @endforeach
+                    </div>
+{{--                     @include('admin.partials.form-inputs.base', [
                         'type' => 'select',
                         'name' => 'year',
                         'multiple' => true,
                         'elems' => $promotions,
                         'old_input' => $promotions,
-                    ])
+                    ]) --}}
                     @include('admin.partials.form-inputs.base', [
                         'type' => 'password',
                         'name' => 'password',
