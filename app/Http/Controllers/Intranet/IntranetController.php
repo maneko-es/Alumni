@@ -31,17 +31,21 @@ class IntranetController extends MyController
         return view('front.intranet.dashboard');
     }
     public function viewPerks(){
-        $perks = Perk::paginate(5);
+        $schools = Auth::user()->schools->pluck('id')->toArray();
+        // $perks = Perk::paginate(5);
+        $perks = Perk::where('school_id', 0)->orWhereIn('school_id', $schools)->get();
         $blocks = Page::find(6)->blocks()->get();
         return view('front.intranet.perks',compact('perks','blocks'));
     }
-        public function searchPerks(Request $request){
-            $t = $request->t;
-            $perks = Perk::whereTranslationLike('title','%'.$t.'%')->orWhereTranslationLike('body','%'.$t.'%')->paginate(5);
+    public function searchPerks(Request $request){
+        $schools = Auth::user()->schools->pluck('id')->toArray();
+        $t = $request->t;
+        $blocks = Page::find(6)->blocks()->get();
+        // $perks = Perk::whereTranslationLike('title','%'.$t.'%')->orWhereTranslationLike('body','%'.$t.'%')->paginate(5);
+        $perks = Perk::whereTranslationLike('title','%'.$t.'%')->orWhereTranslationLike('body','%'.$t.'%')->whereIn('school_id', $schools)->get();
+        return view('front.intranet.perks',compact('blocks','perks','t'));
+    }
 
-            return view('front.intranet.perks',compact('perks','t'));
-        }
-        
     public function viewGallery(){
         $user = Auth::user();
         if($user->preferred_promotion){
@@ -68,7 +72,7 @@ class IntranetController extends MyController
 
         return view('front.intranet.singles.picture',compact('gallery','picture','prev','next'));
     }
-    
+
 
     public function markAsRead(Request $request){
         $user = Auth::user();
@@ -79,5 +83,5 @@ class IntranetController extends MyController
     }
 
 
-    
+
 }

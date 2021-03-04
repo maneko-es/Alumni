@@ -46,7 +46,7 @@
 			@include('front.intranet.partials.bar-perk',['id'=>$s_id,'color'=>$s_color])
 		</div>
 		@endforeach
-		{{ $perks->links() }}
+		{{-- {{ $perks->links() }} --}}
 	</div>
 
 </main>
