@@ -30,6 +30,9 @@
                     ])
                 @else
 
+                    <label class="control-label">Foto</label>
+                    <div class="user-thumbnail" @if($entry->img) style="margin-bottom:20px;width:150px;height:150px;background-size:cover;background-image: url('{{ url('profile/thumbnail/'.$entry->img) }}')" @endif></div>
+
                     @include('admin.partials.form-inputs.base', [
                         'type' => 'text',
                         'name' => 'name',
@@ -88,15 +91,11 @@
                         'multiple' => true,
                         'elems' => $roles,
                     ])
+
                 @endif
             </div>
         </div>
     </div>
 
 </div>
-{{-- <div class="form-group">
-    <button type="submit" class="btn btn-primary">
-        <i class="fa fa-btn fa-save"></i>
-        {{ trans('messages.save') }}
-    </button>
-</div> --}}
+

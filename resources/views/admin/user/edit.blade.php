@@ -37,7 +37,51 @@
         @include('admin.' . $singular_table_name . '.form', [
             'password' => trans('messages.new_password') . ' ' .trans('messages.new_password_text')
         ])
+
+        {{-- Slider user galleries --}}
+        <style>
+          .slick-arrow {
+            background-color:#376994;
+          }
+          .slick-arrow:focus {
+            background-color:#376994;
+          }
+          .slick-arrow:hover {
+            background-color:#376994;
+          }
+        </style>
+        <div style="font-size:22px;color:#376994;font-family:Lato, sans-serif;margin-top:20px;">Fotos i tags</div>
+          @if ($uploaded_pictures->count() > 0)
+            <label style="margin-top:20px;" class="control-label">Fotos afegides per l'usuari</label>
+            <div class="galleries-container" style="margin-bottom:20px;">
+            @foreach ($uploaded_pictures as $img)
+              <div class="gallery-item">
+                <img style="height:200px;width:300px;object-fit:cover;" src="{{ url('galleries/medium/'.$img->img) }}" alt="">
+                <div>{{ $img->gallery->title }}</div>
+                <div> {{$img->gallery->promotion->school->title}} - {{$img->gallery->promotion->title}} </div>
+              </div>
+
+            @endforeach
+            </div>
+          @else
+            <div>L'usuari no ha afegit cap galeria.</div>
+          @endif
+        @if ($tags->count() > 0)
+        <label style="margin-top:20px;" class="control-label">Fotos en què l'usuari ha estat etiquetat</label>
+        <div class="galleries-container" style="margin-bottom:50px;">
+          @foreach ($tags as $tag)
+            <div class="gallery-item">
+              <img style="height:150px;width:250px;object-fit:cover;" src="{{ url('galleries/medium/'.$tag->img) }}" alt="">
+              <div>{{ $img->gallery->title }}</div>
+                <div> {{$img->gallery->promotion->school->title}} - {{$img->gallery->promotion->title}} </div>
+            </div>
+          @endforeach
+        </div>
+        @else
+        <div style="margin-bottom:20px;">L'usuari no ha estat etiquetat en cap foto</div>
+        @endif
 @stop
+
 
 @push('scripts')
     {!! $validator !!}

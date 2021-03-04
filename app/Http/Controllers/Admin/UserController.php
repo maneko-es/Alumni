@@ -9,6 +9,8 @@ use App\User;
 use App\Role;
 use App\School;
 use App\Promotion;
+use App\Gallery;
+use App\Picture;
 
 use App\Services\UploadManager;
 use Illuminate\Http\Request;
@@ -104,8 +106,11 @@ class UserController extends AdminController
             return $promotion->title;
         });
         array_forget($entry, 'password');
+        $tags = $entry->pictures;
+        $galleries = Gallery::where('created_by', $entry->id)->pluck('id')->toArray();
+        $uploaded_pictures = Picture::whereIn('gallery_id', $galleries)->get();
 
-        return parent::renderEdit(new UpdateRequest, compact('entry', 'roles', 'schools', 'promotions'));
+        return parent::renderEdit(new UpdateRequest, compact('entry', 'roles', 'schools', 'promotions', 'uploaded_pictures', 'tags'));
     }
 
     /**
