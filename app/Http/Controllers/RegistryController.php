@@ -26,8 +26,9 @@ class RegistryController extends Controller
 {
 
     public function saveRegistry(Request $request){
-        $exists = User::where('email',$request->email)->first();
-        if($exists){
+        $user = User::where('email',$request->email)->first();
+        $reg = Registry::where('email',$request->email)->first();
+        if($user || $reg){
             return redirect()->back()->with("err","Ja existeix un usuari amb aquesta direcció de correu. Per afegir altres promocions, ves al teu perfil." );
         } elseif(!is_numeric($request->year)) {
             return redirect()->back()->with("err","L'any de promoció ha de ser un número" );
