@@ -56,11 +56,10 @@
             <div class="galleries-container" style="margin-bottom:20px;">
             @foreach ($uploaded_pictures as $img)
               <div class="gallery-item">
-                <img style="height:200px;width:300px;object-fit:cover;" src="{{ url('galleries/medium/'.$img->img) }}" alt="">
+                <img style="height:200px;width:300px;object-fit:cover;" src="{{ url('galleries/medium/' . $img->img) }}" alt="">
                 <div>{{ $img->gallery->title }}</div>
                 <div> {{$img->gallery->promotion->school->title}} - {{$img->gallery->promotion->title}} </div>
               </div>
-
             @endforeach
             </div>
           @else
@@ -71,9 +70,9 @@
         <div class="galleries-container" style="margin-bottom:50px;">
           @foreach ($tags as $tag)
             <div class="gallery-item">
-              <img style="height:150px;width:250px;object-fit:cover;" src="{{ url('galleries/medium/'.$tag->img) }}" alt="">
-              <div>{{ $img->gallery->title }}</div>
-                <div> {{$img->gallery->promotion->school->title}} - {{$img->gallery->promotion->title}} </div>
+              <img style="height:150px;width:250px;object-fit:cover;" src="{{ url('galleries/medium/'. $tag->img) }}" alt="">
+              <div>{{ $tag->gallery->title }}</div>
+                <div> {{ $tag->gallery->promotion->school->title }} - {{ $tag->gallery->promotion->title }} </div>
             </div>
           @endforeach
         </div>
