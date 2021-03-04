@@ -33,7 +33,7 @@ class RegistryController extends Controller
             return redirect()->back()->with("err","L'any de promoció ha de ser un número" );
         } else {
             $registry = new Registry;
-            $registry->name = $request->name;
+            $registry->name = $request->name . ' ' . $request->surname_1 . ' ' . $request->surname_2 ;
             $registry->email = $request->email;
             $registry->school_id = $request->school_id;
             $registry->year = $request->year;

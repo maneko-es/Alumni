@@ -18,8 +18,10 @@
   		@endif
   		<form action="{{ route('save-registry') }}" method="post">
   			{{ csrf_field() }}
-  			<input name="name" type="text" placeholder="Nom i Cognoms" class="form-input" required="required">
-  			<input type="email" name="email" placeholder="Correu electrònic" class="form-input" required="required">
+  			<input name="name" type="text" placeholder="Nom" class="form-input" required="required">
+  			<input name="surname_1" type="text" placeholder="1r Cognom" class="form-input" required="required">
+        <input name="surname_2" type="text" placeholder="2n Cognom" class="form-input" required="required">
+        <input type="email" name="email" placeholder="Correu electrònic" class="form-input" required="required">
   			<div class="menu-select form-input">
   				<select name="school_id"  required="required">
   					<option value="" selected disabled="">Escola</option>
