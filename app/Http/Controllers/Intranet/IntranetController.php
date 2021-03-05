@@ -67,8 +67,8 @@ class IntranetController extends MyController
     public function singlePicture($slug,$id){
         $gallery = Gallery::whereTranslation('slug',$slug)->first();
         $picture = Picture::find($id);
-        $prev = Picture::where('id', '<', $id)->max('id');
-        $next = Picture::where('id', '>', $id)->min('id');
+        $prev = Picture::where('id', '<', $id)->where('gallery_id', $gallery->id)->max('id');
+        $next = Picture::where('id', '>', $id)->where('gallery_id', $gallery->id)->min('id');
 
         return view('front.intranet.singles.picture',compact('gallery','picture','prev','next'));
     }
