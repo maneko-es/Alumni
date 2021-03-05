@@ -53,7 +53,7 @@ class IntranetController extends MyController
         } else {
             $promotion = $user->promotions->first();
         }
-        $galleries = $promotion->galleries()->paginate(9);
+        $galleries = $promotion->galleries()->where('published', true)->paginate(9);
         $categories = Category::where('category_id',11)->get();
         return view('front.intranet.gallery',compact('galleries','categories'));
     }

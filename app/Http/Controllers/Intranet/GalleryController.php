@@ -28,10 +28,10 @@ use Illuminate\Http\Exceptions\PostTooLargeException;
 
 class GalleryController extends MyController
 {
-    
+
     public function searchGallery(Request $request){
         $categories = Category::where('category_id',11)->get();
-        $galleriesQuery = Gallery::where('promotion_id',$request->promotion_id);
+        $galleriesQuery = Gallery::where('promotion_id',$request->promotion_id)->where('published', true);
         if($request->category_id){
             $galleriesQuery->where('category_id',$request->cat);
         }
@@ -53,7 +53,7 @@ class GalleryController extends MyController
 
 
     public function saveGalleryFront(GalleryMediaRequest $request){
-        
+
         $user = Auth::user();
         $gallery = new Gallery;
         $gallery->title = $request->name;
@@ -61,6 +61,7 @@ class GalleryController extends MyController
         $gallery->promotion_id = $request->promotion_id;
         $gallery->category_id = $request->category_id;
         $gallery->created_by = $user->id;
+        $gallery->published = true;
 
         $gallery->slug = str_slug($gallery->title);
 
@@ -116,7 +117,7 @@ class GalleryController extends MyController
         return redirect(route('gallery-single',['slug'=>$gallery->slug]));
     }
 
-    
+
     public function tagUsers(Request $request){
         $picture = Picture::find($request->picture_id);
 
@@ -145,7 +146,7 @@ class GalleryController extends MyController
         $picture = Picture::find($request->picture_id);
         $picture->description = $request->description;
         $picture->save();
-        
+
         return redirect()->back();
     }
     public function addPictures(GalleryMediaRequest $request){
@@ -185,5 +186,5 @@ class GalleryController extends MyController
 
         return redirect()->back();
     }
-    
+
 }

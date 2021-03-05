@@ -58,14 +58,14 @@
               <div class="gallery-item">
                 <img style="height:200px;width:300px;object-fit:cover;" src="{{ url('galleries/medium/' . $img->img) }}" alt="">
                 <div>{{ $img->gallery->title }}</div>
-                <div> {{$img->gallery->promotion->school->title}} - {{$img->gallery->promotion->title}} </div>
+                <div> {{ $img->gallery->promotion->school->title }} - {{$img->gallery->promotion->title}} </div>
               </div>
             @endforeach
             </div>
           @else
-            <div>L'usuari no ha afegit cap galeria.</div>
+            <div style="margin-bottom:20px;">L'usuari no ha afegit cap galeria.</div>
           @endif
-        @if ($tags->count() > 0)
+{{--         @if ($tags->count() > 0)
         <label style="margin-top:20px;" class="control-label">Fotos en què l'usuari ha estat etiquetat</label>
         <div class="galleries-container" style="margin-bottom:50px;">
           @foreach ($tags as $tag)
@@ -78,7 +78,7 @@
         </div>
         @else
         <div style="margin-bottom:20px;">L'usuari no ha estat etiquetat en cap foto</div>
-        @endif
+        @endif --}}
 @stop
 
 

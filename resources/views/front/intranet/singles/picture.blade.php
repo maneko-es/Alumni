@@ -18,7 +18,7 @@
 
         <div class="slide-title-captions">
             <div class="slide-photo">
-                <img src="{{ url('galleries/'.$picture->img) }}" alt="{{ $desc }}">
+                <img src="{{ url('galleries/'. $picture->img) }}" alt="{{ $desc }}">
                 @if($picture->uploaded_by)
                     <small class="cap">Autor/a: {{ App\User::find($picture->uploaded_by)->name }}</small>
                 @endif
@@ -48,7 +48,7 @@
                             <input type="hidden" name="picture_id" value="{{ $picture->id }}">
                             <input type="submit" value="&times;">
                         </form>
-                    @else 
+                    @else
                         <div class="caption"> {{ $mate->name }} </div>
                     @endif
                 @endforeach

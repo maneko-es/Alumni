@@ -22,7 +22,7 @@
 		<div class="welcome-galeria-header school-color">Galeria promoció {{ $promotion->title }}</div>
 
 		<div class="galeria-grid">
-			<?php $galleries = $promotion->galleries()->take(6)->get(); ?>
+			<?php $galleries = $promotion->galleries()->where('published', true)->take(6)->get(); ?>
 			@if($galleries->count() > 0)
 				@foreach($galleries as $gallery)
 				<div class="galeria-item">

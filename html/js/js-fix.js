@@ -10,4 +10,8 @@ $(document).ready(function(){
     // focusOnSelect: true
 
   });
+
+  if($('.breadcrumb li').first().find('a').text() == "Imatges "){
+    $('.breadcrumb li').first().find('a').removeAttr("href");
+  }
 });

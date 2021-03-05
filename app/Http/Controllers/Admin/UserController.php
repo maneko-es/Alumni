@@ -106,11 +106,11 @@ class UserController extends AdminController
             return $promotion->title;
         });
         array_forget($entry, 'password');
-        $tags = $entry->pictures;
-        $galleries = Gallery::where('created_by', $entry->id)->pluck('id')->toArray();
+        // $tags = $entry->pictures;
+        $galleries = Gallery::where('created_by', $entry->id)->where('published', true)->pluck('id')->toArray();
         $uploaded_pictures = Picture::whereIn('gallery_id', $galleries)->get();
 
-        return parent::renderEdit(new UpdateRequest, compact('entry', 'roles', 'schools', 'promotions', 'uploaded_pictures', 'tags'));
+        return parent::renderEdit(new UpdateRequest, compact('entry', 'roles', 'schools', 'promotions', 'uploaded_pictures'));
     }
 
     /**

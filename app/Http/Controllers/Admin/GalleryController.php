@@ -76,7 +76,8 @@ class GalleryController extends AdminController
 
         $entry = $this->model->create($request->all());
 
-        if($files = $request->file()['pictures']) {
+        // if($files = $request->file()['pictures']) {
+          if($files = $request->file('pictures')) {
             foreach($files as $file){
                 $picture = new Picture;
                 $picture->gallery_id = $entry->id;
@@ -108,8 +109,6 @@ class GalleryController extends AdminController
             /*return response()->json([
                 'img' => url('images/galleries/'.$imgName),
             ]);*/
-        } else {
-            dd('dont have file');
         }
 
         return parent::redirectStore($entry, compact('locale'));
@@ -157,7 +156,8 @@ class GalleryController extends AdminController
 
         $entry->update($request->all());
 
-        if($files = $request->file()['pictures']) {
+        // if($files = $request->file()['pictures']) {
+        if($files = $request->file('pictures')){
             foreach($files as $file){
                 $picture = new Picture;
                 $picture->gallery_id = $entry->id;
@@ -189,8 +189,6 @@ class GalleryController extends AdminController
             /*return response()->json([
                 'img' => url('images/galleries/'.$imgName),
             ]);*/
-        } else {
-            dd('dont have file');
         }
 
         return parent::redirectUpdate($entry, compact('locale'));

@@ -42,3 +42,4 @@
 @push('scripts')
     {!! $validator !!}
 @endpush
+

@@ -31,7 +31,11 @@
                 @else
 
                     <label class="control-label">Foto</label>
-                    <div class="user-thumbnail" @if($entry->img) style="margin-bottom:20px;width:150px;height:150px;background-size:cover;background-image: url('{{ url('profile/thumbnail/'.$entry->img) }}')" @endif></div>
+                    @if($entry->img)
+                      <div class="user-thumbnail"  style="margin-bottom:20px;width:150px;height:150px;background-size:cover;background-image: url('{{ url('profile/thumbnail/'. $entry->img) }}')" ></div>
+                    @else
+                      <div style="margin-bottom:20px;">L'usuari no ha afegit cap foto de perfil</div>
+                    @endif
 
                     @include('admin.partials.form-inputs.base', [
                         'type' => 'text',
