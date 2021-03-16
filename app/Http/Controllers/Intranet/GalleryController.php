@@ -63,7 +63,7 @@ class GalleryController extends MyController
         $gallery->created_by = $user->id;
         $gallery->published = true;
 
-        $gallery->slug = str_slug($gallery->title);
+        // $gallery->slug = str_slug($gallery->title);
 
         $gallery->save();
 
@@ -185,6 +185,14 @@ class GalleryController extends MyController
         }
 
         return redirect()->back();
+    }
+
+    public function deletePicture(Request $request){
+
+      $picture = Picture::find($request->picture_id);
+      $gallery_slug = $picture->gallery->slug;
+      $picture->delete();
+      return redirect()->route('gallery-single', [$gallery_slug]);
     }
 
 }

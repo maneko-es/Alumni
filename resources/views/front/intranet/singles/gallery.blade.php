@@ -13,7 +13,7 @@
     <div class="galeria-detall-header">
       <a href="{{ route('gallery') }}"><h3 class="school-color"><i class="fas fa-chevron-left school-color"></i>Tornar a galeria</h3></a>
       <h1>
-        {{ $gallery->title }} 
+        {{ $gallery->title }}
         @if($gallery->created_by)
         <small>Creada per {{ App\User::find($gallery->created_by)->name }}</small>
         @endif
@@ -27,19 +27,24 @@
           <input type="submit" class="add-caption school-background" value="Afegir">
       </form>
     <div class="galeria-grid">
+      @if($gallery->pictures->count() > 0)
+        @foreach ($pictures as $picture)
+          <div class="galeria-detall-item">
+            <a href="{{ route('picture-single',['slug'=>$gallery->slug,'id'=>$picture->id]) }}">
+              <div class="item-photo">
+                <img src="{{ url('galleries/medium/'.$picture->img) }}">
+              </div>
+              @if($picture->users()->count() > 0)
+              <span class="avatar-icon"><i class="far fa-user"></i></span>
+              @endif
+            </a>
+          </div>
+        @endforeach
+      @else
+      <div>Aquesta galeria no conté cap imatge</div>
+      @endif
 
-      @foreach ($pictures as $picture)
-        <div class="galeria-detall-item">
-        	<a href="{{ route('picture-single',['slug'=>$gallery->slug,'id'=>$picture->id]) }}">
-        		<div class="item-photo">
-        			<img src="{{ url('galleries/medium/'.$picture->img) }}">
-        		</div>
-        		@if($picture->users()->count() > 0)
-        		<span class="avatar-icon"><i class="far fa-user"></i></span>
-        		@endif
-        	</a>
-        </div>
-      @endforeach
+
       {{ $pictures->links() }}
     </div>
 </main>

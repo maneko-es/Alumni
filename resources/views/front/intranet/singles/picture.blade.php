@@ -56,6 +56,16 @@
             @endif
 
             <button id="add-caption" class="add-caption">Afegir company/a</button>
+            @if(Auth::user()->id === $picture->uploaded_by)
+              <div class="mt-4">
+                <form action="{{ route('delete-picture') }}" method="post">
+                  @csrf
+                  @method('delete')
+                  <input type="hidden" name="picture_id" value="{{ $picture->id }}">
+                  <input type="submit" class="add-caption" value="Borrar Foto">
+                </form>
+              </div>
+            @endif
             <form action="{{ route('tag-users') }}" id="select-mate" class="out" method="post">
                 {{ csrf_field() }}
                 <input type="hidden" name="picture_id" value="{{ $picture->id }}">

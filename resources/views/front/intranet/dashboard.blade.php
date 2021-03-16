@@ -25,16 +25,27 @@
 			<?php $galleries = $promotion->galleries()->where('published', true)->take(6)->get(); ?>
 			@if($galleries->count() > 0)
 				@foreach($galleries as $gallery)
-				<div class="galeria-item">
-					<a href="{{ route('gallery-single',['slug'=>$gallery->slug]) }}">
-						<?php $img = $gallery->pictures()->orderBy('created_at','desc')->first()->img; ?>
-						<img src="{{ url('galleries/medium/'.$img) }}" alt="">
+          @if($gallery->pictures->count() > 0)
+    				<div class="galeria-item">
+    					<a href="{{ route('gallery-single',['slug'=>$gallery->slug]) }}">
+    						<?php $img = $gallery->pictures()->orderBy('created_at','desc')->first()->img; ?>
+    						<img src="{{ url('galleries/medium/'.$img) }}" alt="">
 
-						<div class="photo-hover school-background">
-							<div class="caption">{{ $gallery->title }}</div><i class="fas fa-chevron-right"></i>
-						</div>
-					</a>
-				</div>
+    						<div class="photo-hover school-background">
+    							<div class="caption">{{ $gallery->title }}</div><i class="fas fa-chevron-right"></i>
+    						</div>
+    					</a>
+    				</div>
+          @else
+          <div class="galeria-item">
+            <a href="{{ route('gallery-single',['slug'=>$gallery->slug]) }}">
+                <img src="{{ asset('images/image-placeholder.jpg') }}" alt="">
+                <div class="photo-hover school-background">
+                  <div class="caption">{{ $gallery->title }}</div><i class="fas fa-chevron-right"></i>
+                </div>
+              </a>
+          </div>
+          @endif
 
 				@endforeach
 			@endif

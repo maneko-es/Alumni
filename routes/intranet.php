@@ -16,7 +16,7 @@ Route::group(
         'prefix' => $locale.'/intranet'
     ], function () {
         Route::get('/', ['as' => 'dashboard', 'uses' => 'IntranetController@dashboard']);
-        
+
         Route::post('/mark-as-read', ['as' => 'mark-as-read', 'uses' => 'IntranetController@markAsRead']);
 
         Route::get('/perfil', ['as' => 'profile', 'uses' => 'UserController@viewProfile']);
@@ -36,7 +36,8 @@ Route::group(
             Route::post('/eliminar-etiqueta', ['as' => 'delete-tag', 'uses' => 'GalleryController@deleteTag']);
             Route::post('/afegir-descripcio', ['as' => 'add-description', 'uses' => 'GalleryController@addDescription']);
             Route::post('/afegir-fotos', ['as' => 'add-pictures', 'uses' => 'GalleryController@addPictures']);
-        
+            Route::delete('/eliminar-foto', ['as' => 'delete-picture', 'uses' => 'GalleryController@deletePicture'] );
+
 
         Route::get('/promocio', ['as' => 'promotion', 'uses' => 'UserController@viewPromotion']);
         Route::get('/avantatges', ['as' => 'perks', 'uses' => 'IntranetController@viewPerks']);
@@ -54,7 +55,7 @@ Route::group(
 
 
         // FORMS
-        
+
 
         Route::post('/send-message', ['as' => 'chat-message', 'uses' => 'ChatsController@sendMessage']);
         Route::post('/delete-message', ['as' => 'delete-message', 'uses' => 'ChatsController@deleteMessage']);

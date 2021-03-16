@@ -9,13 +9,22 @@
 		@if($galleries->count() > 0)
 			<div class="galeria-grid wide-row-gap">
 				@foreach($galleries as $gallery)
-				<div class="galeria-item">
-					<a href="{{ route('gallery-single',['slug'=>$gallery->slug]) }}">
-						<?php $img = $gallery->pictures()->orderBy('created_at','desc')->first()->img; ?>
-						<div class="galeria-foto"><img src="{{ url('galleries/medium/'.$img) }}" alt="{{ $gallery->title }}"></div>
-						<div class="galeria-title">{{ $gallery->title }}<i class="fas fa-chevron-right school-color"></i></div>
-					</a>
-				</div>
+          @if($gallery->pictures->count() > 0)
+    				<div class="galeria-item">
+    					<a href="{{ route('gallery-single',['slug'=>$gallery->slug]) }}">
+    						<?php $img = $gallery->pictures()->orderBy('created_at','desc')->first()->img; ?>
+    						<div class="galeria-foto"><img src="{{ url('galleries/medium/'.$img) }}" alt="{{ $gallery->title }}"></div>
+    						<div class="galeria-title">{{ $gallery->title }}<i class="fas fa-chevron-right school-color"></i></div>
+    					</a>
+    				</div>
+            @else
+            <div class="galeria-item">
+              <a href="{{ route('gallery-single',['slug'=>$gallery->slug]) }}">
+                <div class="galeria-foto"><img style="width:100%;height:100%;object-fit:cover;" src="{{ asset('images/image-placeholder.jpg') }}" alt="{{ $gallery->title }}"></div>
+                <div class="galeria-title">{{ $gallery->title }}<i class="fas fa-chevron-right school-color"></i></div>
+              </a>
+            </div>
+          @endif
 				@endforeach
 				{{ $galleries->links() }}
 			</div>
